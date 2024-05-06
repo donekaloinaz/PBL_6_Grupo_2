@@ -29,13 +29,13 @@ subplot(121)
 plot(green_histogram); title('Original histogram');
 subplot(122)
 plot(resultedhist); title('Smoothed histogram');
-std_hist = std(resultedhist);
-mean_hist = mean(resultedhist);
-green_threshold = mean_hist + 2*std_hist + 2*green_std + green_mean;
+std_gauss = 6;
+mean_gauss = 50;
+green_threshold = mean_gauss + 2*std_gauss + 2*green_std + green_mean;
 %% Image binarization by theoretic threshold
 figure
-imshow(mdf_green_channel>green_threshold,[])
-kernel = strel('disk',100);
+imshow(imadjust(mdf_green_channel)>green_threshold,[])
+kernel = strel('disk',50);
 opticcup_seg_theo = imclose(mdf_green_channel>green_threshold,kernel);
 figure
 imshow(opticcup_seg_theo); title('Theoretical binarization');
