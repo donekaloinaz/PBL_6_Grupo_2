@@ -67,10 +67,10 @@ results.accuracy.nb = acc_nb;
 % results.precision.tree = precis_tree;
 % results.precision.rf = precis_rf;
 % results.precision.nb = precis_nb;
-results.error.svm = loss_svm;
-results.error.tree = loss_tree;
-results.error.rf = loss_rf;
-results.error.nb = loss_nb;
+% results.error.svm = loss_svm;
+% results.error.tree = loss_tree;
+% results.error.rf = loss_rf;
+% results.error.nb = loss_nb;
 %%
 function stand = returnstand(str)
 if strcmp(str,'true')
