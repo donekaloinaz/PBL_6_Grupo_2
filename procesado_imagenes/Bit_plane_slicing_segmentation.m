@@ -56,7 +56,7 @@ for i = 1:11
             seg = logical(bit7) & logical(bit5) & logical(bit4);
             segclose = imclose(seg,se);
         case 5
-            seg = logical(bit7) & logical(bit5) & logical(bit4);
+            seg = logical(bit6) & logical(bit5) & logical(bit4);
             segclose = imclose(seg,se);
         case 6
             seg = logical(bit6) & logical(bit7);
@@ -77,12 +77,14 @@ for i = 1:11
             seg = logical(bit5) & logical(bit4);
             segclose = imclose(seg,se);
     end
-    statsd = regionprops(segclose,'Circularity','Centroid',"Area","BoundingBox");
+    statsd = regionprops(segclose,'Circularity','Centroid',"Area","BoundingBox","Perimeter");
+    dotper = cat(1,statsd.Perimeter);
     dotarea = cat(1,statsd.Circularity);
     dotcirc = cat(1,statsd.Area);
     compcirc=isinf(dotcirc)==0;
     dotcirc=dotcirc.*compcirc;
     dotarea=dotarea.*compcirc;
+    dotper=dotper.*compcirc;
     dotcircnorm = dotcirc/max(dotcirc);
     L=0;
     x = 1;
@@ -95,14 +97,16 @@ for i = 1:11
     dotcircnorm(dotcircnorm<0.5) = [];
     if L~=0
         dotarea(L,:) = [];
+        dotper(L,:) = [];
     end
     [~,idx] = max(dotarea);
     label_circ(i)=dotarea(idx);
     label_area(i)=dotcirc(idx);
+    label_per(i)=dotper(idx);
 end
-ratios = label_circ.*label_area;
+ratios = label_circ.*(label_area./label_per);
 [~,ratio_idx] = max(ratios);
-    switch i
+    switch ratio_idx
         case 1
             seg = logical(bit6) & logical(bit7) & logical(bit5) & logical(bit4);
             segclose = imclose(seg,se);
@@ -116,7 +120,7 @@ ratios = label_circ.*label_area;
             seg = logical(bit7) & logical(bit5) & logical(bit4);
             segclose = imclose(seg,se);
         case 5
-            seg = logical(bit7) & logical(bit5) & logical(bit4);
+            seg = logical(bit6) & logical(bit5) & logical(bit4);
             segclose = imclose(seg,se);
         case 6
             seg = logical(bit6) & logical(bit7);
