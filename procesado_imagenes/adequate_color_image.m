@@ -41,7 +41,7 @@ function bw = adequate_color_image(red_channel)
     label_circ = zeros(1,11);
     label_per = zeros(1,11);
     label_ecc = zeros(1,11);
-    se = strel('disk',10,8);
+    se = strel('disk',20,8);
     for i = 1:11
         switch i
             case 1
@@ -104,8 +104,8 @@ function bw = adequate_color_image(red_channel)
             dotecc(L,:) = [];
         end
         [~,idx] = max(dotarea);
-        label_circ(i)=dotarea(idx);
-        label_area(i)=dotcirc(idx);
+        label_circ(i)=dotcirc(idx);
+        label_area(i)=dotarea(idx);
         label_per(i)=dotper(idx);
         label_ecc(i)=dotecc(idx);
     end
