@@ -1,4 +1,0 @@
-function segmented_I = segment_rgb_image(bwselected,I)
-rgb = im2double(I);
-segmented_I = uint8(bsxfun(@times, rgb, double(bwselected)));
-end
