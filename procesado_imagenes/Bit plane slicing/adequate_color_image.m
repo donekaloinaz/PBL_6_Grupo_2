@@ -3,12 +3,8 @@ function bw = adequate_color_image(red_channel)
     red_channel = red_channel - stdred;
     figure
     imshow(red_channel,[]);
-    figure
     preproc_red_channel8 = uint8(red_channel);
-    imhist(preproc_red_channel8);
     adj_preproc = imadjust(preproc_red_channel8);
-    figure
-    imhist(adj_preproc)
     figure
     imshow(adj_preproc,[])
     I1 = de2bi(adj_preproc);
