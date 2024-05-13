@@ -9,13 +9,13 @@ figure
 subplot(221)
 imshow(bw,[]);
 if segblue == true
-    title('Segmentation by blue channel');
+    title('Segmentación mediante canal azul');
 else
-    title('Segmentation by red channel');
+    title('Segmentación mediante canal rojo');
 end
 subplot(222)
-imshow(bwselected,[]); title('Segmentation mask');
+imshow(bwselected,[]); title('Máscara');
 subplot(223)
-imshow(segmented_I,[]); title('Segmented RGB image');
+imshow(segmented_I,[]); title('Imagen RGB segmentada');
 subplot(224)
-imshow(cropped_image); title('Cropped RGB image');
+imshow(cropped_image); title('Imagen RGB recortada');
