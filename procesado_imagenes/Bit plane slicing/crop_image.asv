@@ -1,12 +1,9 @@
 function cropped_image = crop_image(centre,I,bwselected)
 diameter = calculate_diameter(bwselected);
-if diameter < 300
-    diameter = 300;
-end
-row_start = centre(1) - ((round(diameter/2))+100);
-row_end = centre(1) + ((round(diameter/2))+100);
-col_start = centre(2) - ((round(diameter/2))+100);
-col_end = centre(2) + ((round(diameter/2))+100);
+row_start = centre(1) - (diameter/2)+150;
+row_end = centre(1) + (diameter/2)+150;
+col_start = centre(2) - (diameter/2)+150;
+col_end = centre(2) + (diameter/2)+150;
 if row_start <= 0
     row_start = 1;
 end

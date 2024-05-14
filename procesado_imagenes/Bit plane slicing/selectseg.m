@@ -1,4 +1,5 @@
 function [bwselected,centre] = selectseg(bw)
+    bw = bwlabel(bw);
     statsd = regionprops("table",bw,'Circularity','Centroid',"Area","BoundingBox","Perimeter","Eccentricity","PixelList");
     dotper = statsd.Perimeter;
     dotarea = statsd.Area;

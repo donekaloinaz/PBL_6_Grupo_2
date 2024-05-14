@@ -2,6 +2,7 @@ close all
 clear
 load imagenes_limpias_predict.mat
 I = imagenlimpiarandom(imlimpiaspredict);
+%% 
 figure
 imshow(I,[])
 [bw,bwselected,segmented_I,cropped_image,segblue] = Bit_plane_slicing_segmentation(I);
