@@ -1,12 +1,12 @@
 function bw = adequate_color_image(red_channel)
     stdred = std(red_channel(:));
     red_channel = red_channel - stdred;
-    figure
-    imshow(red_channel,[]);
+    %figure
+    %imshow(red_channel,[]);
     preproc_red_channel8 = uint8(red_channel);
     adj_preproc = imadjust(preproc_red_channel8);
-    figure
-    imshow(adj_preproc,[])
+    %figure
+    %imshow(adj_preproc,[])
     I1 = de2bi(adj_preproc);
     bit1 = reshape(I1(:,1),size(red_channel));
     bit2 = reshape(I1(:,2),size(red_channel));
