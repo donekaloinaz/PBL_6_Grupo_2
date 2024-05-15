@@ -11,23 +11,44 @@ red_channel = double(I(:,:,1));
 green_channel = double(I(:,:,2));
 blue_channel = double(I(:,:,3));
 figure
-subplot(131)
+subplot(311)
 imshow(red_channel,[]); title('Red Channel');
-subplot(132)
+subplot(312)
 imshow(green_channel,[]); title('Green Channel');
-subplot(133)
+subplot(313)
 imshow(blue_channel,[]); title('Blue Channel');
 %% 
-VesselsRemoved = RemoveVessels(I);
+Vessels_Removed = RemoveVessels(I);
 figure
-imshow(VesselsRemoved,[]);
-red_channel_vremoved = double(VesselsRemoved(:,:,1));
-green_channel_vremoved = double(VesselsRemoved(:,:,2));
-blue_channel_vremoved = double(VesselsRemoved(:,:,3));
+imshow(Vessels_Removed,[]);
+red_channel_vremoved = double(Vessels_Removed(:,:,1));
+green_channel_vremoved = double(Vessels_Removed(:,:,2));
+blue_channel_vremoved = double(Vessels_Removed(:,:,3));
+figure
+subplot(311)
+imshow(red_channel_vremoved,[]); title('Red Channel');
+subplot(312)
+imshow(green_channel_vremoved,[]); title('Green Channel');
+subplot(313)
+imshow(blue_channel_vremoved,[]); title('Blue Channel');
+%%
+[VesselsRemoved, bw, bwselected, segmented_I, cropped_image, segblue] = Bit_plane_slicing_segmentation(I);
+Crop_Vessels_Removed = RemoveVessels(cropped_image);
+figure
+subplot(121)
+imshow(Crop_Vessels_Removed,[]);
+subplot(122)
+imshow(cropped_image,[])
+%% 
+bwgreen = green_channel_bitplaneslicing(cropped_image);
+bwgreenselected = selectseg(bwgreen);
+bwred = red_channel_bitplaneslicing(cropped_image);
+bwredselected = selectseg(bwred);
+cupdiscmask = bwgreenselected-bwredselected;
 figure
 subplot(131)
-imshow(red_channel_vremoved,[]); title('Red Channel');
+imshow(bwredselected,[]);
 subplot(132)
-imshow(green_channel_vremoved,[]); title('Green Channel');
+imshow(bwgreenselected,[]);
 subplot(133)
-imshow(blue_channel_vremoved,[]); title('Blue Channel');
+imshow(cupdiscmask,[]);
