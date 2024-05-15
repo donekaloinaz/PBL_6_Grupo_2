@@ -1,22 +1,21 @@
-function bw = red_channel_bitplaneslicing(I)
-    red_channel = double(I(:,:,1));
-    stdred = std(red_channel(:));
-    red_channel = red_channel - stdred;
+function bw = green_channel_bitplaneslicing(I)
+    green_channel = double(I(:,:,2));
+    % figure
+    % imshow(green_channel,[]);
+    std_green = std(green_channel(:));
+    preproc_green_channel = uint8(green_channel-(std_green));
+    adj_preproc = imadjust(preproc_green_channel);
     %figure
-    %imshow(red_channel,[]);
-    preproc_red_channel8 = uint8(red_channel);
-    adj_preproc = imadjust(preproc_red_channel8);
-    %figure
-    %imshow(adj_preproc,[])
-    I1 = de2bi(adj_preproc);
-    bit1 = reshape(I1(:,1),size(red_channel));
-    bit2 = reshape(I1(:,2),size(red_channel));
-    bit3 = reshape(I1(:,3),size(red_channel));
-    bit4 = reshape(I1(:,4),size(red_channel));
-    bit5 = reshape(I1(:,5),size(red_channel));
-    bit6 = reshape(I1(:,6),size(red_channel));
-    bit7 = reshape(I1(:,7),size(red_channel));
-    bit8 = reshape(I1(:,8),size(red_channel));
+    %imshow(adj_preproc,[]);
+    bipreproc = de2bi(adj_preproc);
+    bit1 = reshape(bipreproc(:,1),size(green_channel));
+    bit2 = reshape(bipreproc(:,2),size(green_channel));
+    bit3 = reshape(bipreproc(:,3),size(green_channel));
+    bit4 = reshape(bipreproc(:,4),size(green_channel));
+    bit5 = reshape(bipreproc(:,5),size(green_channel));
+    bit6 = reshape(bipreproc(:,6),size(green_channel));
+    bit7 = reshape(bipreproc(:,7),size(green_channel));
+    bit8 = reshape(bipreproc(:,8),size(green_channel));
     % figure()
     % subplot(421)
     % imshow(bit1,[])
