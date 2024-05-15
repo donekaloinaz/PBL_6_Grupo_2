@@ -51,4 +51,4 @@ imshow(bwredselected,[]); title('Optic disk');
 subplot(132)
 imshow(bwgreenselected,[]); title('Optic cup (intento)')
 subplot(133)
-imshow(cupdiscmask,[]); title('Disk/cup mask')
+imshow(cupdiscmask,[]); title('Disk/cup mask');
