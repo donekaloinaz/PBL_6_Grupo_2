@@ -1,4 +1,5 @@
-function bw = adequate_color_image(red_channel)
+function bw = red_channel_bitplaneslicing(I)
+    red_channel = double(I(:,:,1));
     stdred = std(red_channel(:));
     red_channel = red_channel - stdred;
     figure

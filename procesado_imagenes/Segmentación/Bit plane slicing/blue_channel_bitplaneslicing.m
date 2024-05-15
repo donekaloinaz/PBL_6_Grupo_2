@@ -1,4 +1,5 @@
-function bw = too_red_image(blue_channel)
+function bw = blue_channel_bitplaneslicing(I)
+    blue_channel = double(I(:,:,3));
     figure
     imshow(blue_channel,[]);
     std_blue = std(blue_channel(:));
