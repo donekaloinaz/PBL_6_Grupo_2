@@ -5,7 +5,7 @@ I = imagenlimpiarandom(imlimpiaspredict);
 %% 
 figure
 imshow(I,[])
-[bw,bwselected,segmented_I,cropped_image,segblue] = Bit_plane_slicing_segmentation(I);
+[VesselsRemoved,bw,bwselected,segmented_I,cropped_image,segblue] = Bit_plane_slicing_segmentation(I);
 figure
 subplot(221)
 imshow(bw,[]);
