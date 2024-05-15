@@ -1,7 +1,7 @@
 clear; close all; clc;
-load imagen_delahostia.mat
+load imagenes_buenas.mat
 %% 
-I = imread(im_sin_str);
+I = imread(im_sin_str2);
 figure
 subplot(121)
 imshow(I,[]); title('Image')
