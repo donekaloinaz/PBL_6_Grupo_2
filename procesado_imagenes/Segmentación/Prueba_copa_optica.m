@@ -36,19 +36,19 @@ imshow(blue_channel_vremoved,[]); title('Blue Channel');
 Crop_Vessels_Removed = RemoveVessels(cropped_image);
 figure
 subplot(121)
-imshow(Crop_Vessels_Removed,[]);
+imshow(Crop_Vessels_Removed,[]); title('Reremove vessels');
 subplot(122)
-imshow(cropped_image,[])
+imshow(cropped_image,[]); title('Only removed once');
 %% 
 bwgreen = green_channel_bitplaneslicing(cropped_image);
 bwgreenselected = selectseg(bwgreen);
 bwred = red_channel_bitplaneslicing(cropped_image);
 bwredselected = selectseg(bwred);
-cupdiscmask = bwgreenselected-bwredselected;
+cupdiscmask = bwredselected-bwgreenselected;
 figure
 subplot(131)
-imshow(bwredselected,[]);
+imshow(bwredselected,[]); title('Optic disk');
 subplot(132)
-imshow(bwgreenselected,[]);
+imshow(bwgreenselected,[]); title('Optic cup (intento)')
 subplot(133)
-imshow(cupdiscmask,[]);
+imshow(cupdiscmask,[]); title('Disk/cup mask')
