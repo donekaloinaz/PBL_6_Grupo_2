@@ -10,9 +10,7 @@ im_green = im_rgb(:,:,2);
 
 im_enh = adapthisteq(im_green,'numTiles',[8 8],'nBins',128);
 
-[im_enh1, ~] = replace_black_ring(im_enh,im_mask);
-
-im_gray = imcomplement(im_enh1); 
+im_gray = imcomplement(im_enh); 
 
 se = strel('disk',10);
 im_top = imtophat(im_gray,se);
@@ -24,6 +22,8 @@ im_thre=imopen(im_thre,se);
 se = strel('disk',7);
 im_thre=imdilate(im_thre,se);
 se = strel('disk',5);
+im_thre=imclose(im_thre,se);
+im_thre=imclose(im_thre,se);
 im_thre=imclose(im_thre,se);
 
 im_sin=inpaintCoherent(I,im_thre,"SmoothingFactor",4,"Radius",30);
