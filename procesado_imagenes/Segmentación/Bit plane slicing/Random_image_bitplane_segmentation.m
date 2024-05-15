@@ -4,7 +4,7 @@ load imagenes_limpias_predict.mat
 figure
 imshow(I,[])
 %% 
-[VesselsRemoved,bw,bwselected,segmented_I,cropped_image,segblue] = Bit_plane_slicing_segmentation(I);
+[VesselsRemoved,bw,bwselected,segmented_I,cropped_image_novessels,cropped_image_wvessels,segblue] = Bit_plane_slicing_segmentation(I);
 figure
 subplot(221)
 imshow(bw,[]);
@@ -18,4 +18,4 @@ imshow(bwselected,[]); title('Máscara');
 subplot(223)
 imshow(segmented_I,[]); title('Imagen RGB segmentada');
 subplot(224)
-imshow(cropped_image); title('Imagen RGB recortada');
+imshow(cropped_image_novessels); title('Imagen RGB recortada');

@@ -1,7 +1,7 @@
 clear; close all; clc;
 load imagenes_buenas.mat
 %% 
-I = imread(im_sin_str2);
+I = imread(im_sin_str3);
 figure
 subplot(121)
 imshow(I,[]); title('Image')
@@ -32,17 +32,19 @@ imshow(green_channel_vremoved,[]); title('Green Channel');
 subplot(313)
 imshow(blue_channel_vremoved,[]); title('Blue Channel');
 %%
-[VesselsRemoved, bw, bwselected, segmented_I, cropped_image, segblue] = Bit_plane_slicing_segmentation(I);
-Crop_Vessels_Removed = RemoveVessels(cropped_image);
+[VesselsRemoved, bw, bwselected, segmented_I, cropped_image_novessels, cropped_image_wvessels, segblue] = Bit_plane_slicing_segmentation(I);
+Crop_Vessels_Removed = RemoveVessels(cropped_image_novessels);
 figure
-subplot(121)
+subplot(131)
 imshow(Crop_Vessels_Removed,[]); title('Reremove vessels');
-subplot(122)
-imshow(cropped_image,[]); title('Only removed once');
+subplot(132)
+imshow(cropped_image_novessels,[]); title('Only removed once');
+subplot(133)
+imshow(cropped_image_wvessels,[]); title('Vessels not removed')
 %% 
-bwgreen = green_channel_bitplaneslicing(cropped_image);
+bwgreen = green_channel_bitplaneslicing(cropped_image_novessels);
 bwgreenselected = selectseg(bwgreen);
-bwred = red_channel_bitplaneslicing(cropped_image);
+bwred = red_channel_bitplaneslicing(cropped_image_novessels);
 bwredselected = selectseg(bwred);
 cupdiscmask = bwredselected-bwgreenselected;
 figure
