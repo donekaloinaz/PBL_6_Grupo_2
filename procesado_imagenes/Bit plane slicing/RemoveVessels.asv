@@ -14,14 +14,14 @@ im_top_8=im2uint8(im_top);
 im_top_8=imadjust(im_top_8);
 
 
-thre=adaptthresh(im_top_8, 0.3);
-im_thre=imbinarize(im_top_8, thre);
-
+%im_thre=im_top_8>100;
+im_thre=imbinarize(im_top_8, 'adaptive');
 
 se = strel('disk',5);
 im_thre=imopen(im_thre,se);
 se = strel('disk',7);
 im_thre=imdilate(im_thre,se);
+se = strel('disk',5);
 im_thre=imclose(im_thre,se);
 im_thre=imclose(im_thre,se);
 im_thre=imclose(im_thre,se);
