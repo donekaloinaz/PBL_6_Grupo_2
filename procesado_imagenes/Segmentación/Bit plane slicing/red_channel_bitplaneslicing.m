@@ -1,4 +1,5 @@
-function bw = adequate_color_image(red_channel)
+function bw = red_channel_bitplaneslicing(I)
+    red_channel = double(I(:,:,1));
     stdred = std(red_channel(:));
     red_channel = red_channel - stdred;
     %figure
@@ -42,39 +43,39 @@ function bw = adequate_color_image(red_channel)
         switch i
             case 1
                 seg = logical(bit6) & logical(bit7) & logical(bit5) & logical(bit4);
-                segopen = imopen(seg,se);
+                seg = imopen(seg,se);
             case 2
                 seg = logical(bit6) & logical(bit7) & logical(bit5);
-                segopen = imopen(seg,se);
+                seg = imopen(seg,se);
             case 3
                 seg = logical(bit6) & logical(bit7) & logical(bit4);
-                segopen = imopen(seg,se);
+                seg = imopen(seg,se);
             case 4
                 seg = logical(bit7) & logical(bit5) & logical(bit4);
-                segopen = imopen(seg,se);
+                seg = imopen(seg,se);
             case 5
                 seg = logical(bit6) & logical(bit5) & logical(bit4);
-                segopen = imopen(seg,se);
+                seg = imopen(seg,se);
             case 6
                 seg = logical(bit6) & logical(bit7);
-                segopen = imopen(seg,se);
+                seg = imopen(seg,se);
             case 7
                 seg = logical(bit7) & logical(bit5);
-                segopen = imopen(seg,se);
+                seg = imopen(seg,se);
             case 8
                 seg = logical(bit7) & logical(bit4);
-                segopen = imopen(seg,se);
+                seg = imopen(seg,se);
             case 9
                 seg = logical(bit6) & logical(bit5);
-                segopen = imopen(seg,se);
+                seg = imopen(seg,se);
             case 10
                 seg = logical(bit6) & logical(bit4);
-                segopen = imopen(seg,se);
+                seg = imopen(seg,se);
             case 11
                 seg = logical(bit5) & logical(bit4);
-                segopen = imopen(seg,se);
+                seg = imopen(seg,se);
         end
-        statsd = regionprops(segopen,'Circularity','Centroid',"Area","BoundingBox","Perimeter","Eccentricity");
+        statsd = regionprops(seg,'Circularity','Centroid',"Area","BoundingBox","Perimeter","Eccentricity");
         dotper = cat(1,statsd.Perimeter);
         dotarea = cat(1,statsd.Circularity);
         dotcirc = cat(1,statsd.Area);
@@ -110,37 +111,37 @@ function bw = adequate_color_image(red_channel)
     switch ratio_idx
         case 1
             seg = logical(bit6) & logical(bit7) & logical(bit5) & logical(bit4);
-            segopen = imopen(seg,se);
+            seg = imopen(seg,se);
         case 2
             seg = logical(bit6) & logical(bit7) & logical(bit5);
-            segopen = imopen(seg,se);
+            seg = imopen(seg,se);
         case 3
             seg = logical(bit6) & logical(bit7) & logical(bit4);
-            segopen = imopen(seg,se);
+            seg = imopen(seg,se);
         case 4
             seg = logical(bit7) & logical(bit5) & logical(bit4);
-            segopen = imopen(seg,se);
+            seg = imopen(seg,se);
         case 5
             seg = logical(bit6) & logical(bit5) & logical(bit4);
-            segopen = imopen(seg,se);
+            seg = imopen(seg,se);
         case 6
             seg = logical(bit6) & logical(bit7);
-            segopen = imopen(seg,se);
+            seg = imopen(seg,se);
         case 7
             seg = logical(bit7) & logical(bit5);
-            segopen = imopen(seg,se);
+            seg = imopen(seg,se);
         case 8
             seg = logical(bit7) & logical(bit4);
-            segopen = imopen(seg,se);
+            seg = imopen(seg,se);
         case 9
             seg = logical(bit6) & logical(bit5);
-            segopen = imopen(seg,se);
+            seg = imopen(seg,se);
         case 10
             seg = logical(bit6) & logical(bit4);
-            segopen = imopen(seg,se);
+            seg = imopen(seg,se);
         case 11
             seg = logical(bit5) & logical(bit4);
-            segopen = imopen(seg,se);
+            seg = imopen(seg,se);
     end
-    bw = segopen;
+    bw = seg;
 end

@@ -71,6 +71,14 @@ results.accuracy.nb = acc_nb;
 % results.error.tree = loss_tree;
 % results.error.rf = loss_rf;
 % results.error.nb = loss_nb;
+%% Create Final SVM Modela
+cv_in2 = cvpartition(class,"KFold",10);
+opt2.CVPartition = cv_in2;
+opt2.Verbose = 0;
+opt2.ShowPlots = false;
+svm_final_mdl = fitcecoc(features,class,'OptimizeHyperparameters','auto', ...
+    'HyperparameterOptimizationOptions',opt2);
+save("Modelo_final_SVM","svm_final_mdl");
 %%
 function stand = returnstand(str)
 if strcmp(str,'true')
