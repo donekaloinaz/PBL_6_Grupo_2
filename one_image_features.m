@@ -11,6 +11,7 @@ entropy_vals = entropy(Ig);
 Ifft = abs(fft(I));
 entropy_ft_vals = entropy(Ifft);
 
+Features=table();
 Features.immse = immse_vals;
 Features.psnr = psnr_vals;
 Features.ssim = ssim_vals;
