@@ -77,10 +77,10 @@ imshow(cuplogical,[]); title('Optic cup (2o intento)')
 subplot(133)
 imshow(cupdiscmask2,[]); title('Disk/cup mask');
 %% Otra prueba
+
 bwcup = opticcup_bitplaneslicing(cropped_image_novessels);
 bwcupselected = selectseg(bwcup);
-cupdiscmask = bwredselected-bwcupselected;
-figure
+cupdiscmask = bwredselected-bwgreenselected;
 subplot(131)
 imshow(bwredselected,[]); title('Optic disk');
 subplot(132)
