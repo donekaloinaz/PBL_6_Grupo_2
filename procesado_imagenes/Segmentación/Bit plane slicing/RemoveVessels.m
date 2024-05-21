@@ -1,7 +1,11 @@
 function im_sin=RemoveVessels(I)
-
+    
 im_rgb = im2double(I);
 
+im_mask = im_rgb(:,:,2) > (20/255);
+    
+im_mask = double(imerode(im_mask, strel('disk',3)));
+    
 im_green = im_rgb(:,:,2);
 
 im_enh = adapthisteq(im_green,'numTiles',[8 8],'nBins',128);
@@ -12,11 +16,7 @@ se = strel('disk',10);
 im_top = imtophat(im_gray,se);
 im_top_8=im2uint8(im_top);
 im_top_8=imadjust(im_top_8);
-
-
-%im_thre=im_top_8>100;
-im_thre=imbinarize(im_top_8, 'adaptive');
-
+im_thre=im_top_8>100;
 se = strel('disk',5);
 im_thre=imopen(im_thre,se);
 se = strel('disk',7);
