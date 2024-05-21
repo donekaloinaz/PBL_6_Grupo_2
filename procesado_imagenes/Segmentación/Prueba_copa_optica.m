@@ -1,7 +1,7 @@
 clear; close all; clc;
 load imagenes_buenas.mat
 %% 
-I = imread(im_sin_str3);
+I = imread(im_sin_str2);
 figure
 subplot(121)
 imshow(I,[]); title('Image')
