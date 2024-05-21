@@ -1,7 +1,7 @@
 clear; close all; clc;
 load imagenes_buenas.mat
 %% 
-I = imread(im_sin_str3);
+I = imread(im_sin_str4);
 figure
 subplot(121)
 imshow(I,[]); title('Image')
@@ -42,7 +42,7 @@ imshow(cropped_image_novessels,[]); title('Only removed once');
 subplot(133)
 imshow(cropped_image_wvessels,[]); title('Vessels not removed')
 %% 
-bwgreen = green_channel_bitplaneslicing(cropped_image_novessels);
+bwgreen = blue_channel_bitplaneslicing(cropped_image_novessels);
 bwgreenselected = selectseg(bwgreen);
 bwred = red_channel_bitplaneslicing(cropped_image_novessels);
 bwredselected = selectseg(bwred);

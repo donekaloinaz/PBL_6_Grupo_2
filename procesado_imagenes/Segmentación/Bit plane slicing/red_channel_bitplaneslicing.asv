@@ -76,42 +76,35 @@ function bw = red_channel_bitplaneslicing(I)
                 seg = imopen(seg,se);
         end
         statsd = regionprops(seg,'Circularity','Centroid',"Area","BoundingBox","Perimeter","Eccentricity");
-        if ~isempty(statsd)
-            dotper = cat(1,statsd.Perimeter);
-            dotarea = cat(1,statsd.Circularity);
-            dotcirc = cat(1,statsd.Area);
-            dotecc = cat(1,statsd.Eccentricity);
-            compcirc=isinf(dotcirc)==0;
-            dotcirc=dotcirc.*compcirc;
-            dotarea=dotarea.*compcirc;
-            dotper=dotper.*compcirc;
-            dotecc=dotecc.*compcirc;
-            dotcircnorm = dotcirc/max(dotcirc);
-            L=0;
-            x = 1;
-            for j = 1:height(dotcircnorm)
-                if dotcircnorm(j) < 0.5
-                    L(x) = j;
-                    x = x+1;
-                end
+        dotper = cat(1,statsd.Perimeter);
+        dotarea = cat(1,statsd.Circularity);
+        dotcirc = cat(1,statsd.Area);
+        dotecc = cat(1,statsd.Eccentricity);
+        compcirc=isinf(dotcirc)==0;
+        dotcirc=dotcirc.*compcirc;
+        dotarea=dotarea.*compcirc;
+        dotper=dotper.*compcirc;
+        dotecc=dotecc.*compcirc;
+        dotcircnorm = dotcirc/max(dotcirc);
+        L=0;
+        x = 1;
+        for j = 1:height(dotcircnorm)
+            if dotcircnorm(j) < 0.5
+                L(x) = j;
+                x = x+1;
             end
-            dotcircnorm(dotcircnorm<0.5) = [];
-            if L~=0
-                dotarea(L,:) = [];
-                dotper(L,:) = [];
-                dotecc(L,:) = [];
-            end
-            [~,idx] = max(dotarea);
-            label_circ(i)=dotcirc(idx);
-            label_area(i)=dotarea(idx);
-            label_per(i)=dotper(idx);
-            label_ecc(i)=dotecc(idx);
-        else
-            label_circ(i)=nan;
-            label_area(i)=nan;
-            label_per(i)=nan;
-            label_ecc(i)=nan;
         end
+        dotcircnorm(dotcircnorm<0.5) = [];
+        if L~=0
+            dotarea(L,:) = [];
+            dotper(L,:) = [];
+            dotecc(L,:) = [];
+        end
+        [~,idx] = max(dotarea);
+        label_circ(i)=dotcirc(idx);
+        label_area(i)=dotarea(idx);
+        label_per(i)=dotper(idx);
+        label_ecc(i)=dotecc(idx);
     end
     ratios = label_circ.*(label_area./(label_per.*label_ecc));
     [~,ratio_idx] = max(ratios);

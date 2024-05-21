@@ -1,22 +1,21 @@
-function bw = red_channel_bitplaneslicing(I)
-    red_channel = double(I(:,:,1));
-    stdred = std(red_channel(:));
-    red_channel = red_channel - stdred;
+function bw = blue_channel_bitplaneslicing(I)
+    blue_channel = double(I(:,:,3));
+    % figure
+    % imshow(blue_channel,[]);
+    std_blue = std(blue_channel(:));
+    preproc_blue_channel = uint8(blue_channel-(std_blue));
+    adj_preproc = imadjust(preproc_blue_channel);
     %figure
-    %imshow(red_channel,[]);
-    preproc_red_channel8 = uint8(red_channel);
-    adj_preproc = imadjust(preproc_red_channel8);
-    %figure
-    %imshow(adj_preproc,[])
-    I1 = de2bi(adj_preproc);
-    bit1 = reshape(I1(:,1),size(red_channel));
-    bit2 = reshape(I1(:,2),size(red_channel));
-    bit3 = reshape(I1(:,3),size(red_channel));
-    bit4 = reshape(I1(:,4),size(red_channel));
-    bit5 = reshape(I1(:,5),size(red_channel));
-    bit6 = reshape(I1(:,6),size(red_channel));
-    bit7 = reshape(I1(:,7),size(red_channel));
-    bit8 = reshape(I1(:,8),size(red_channel));
+    %imshow(adj_preproc,[]);
+    bipreproc = de2bi(adj_preproc);
+    bit1 = reshape(bipreproc(:,1),size(blue_channel));
+    bit2 = reshape(bipreproc(:,2),size(blue_channel));
+    bit3 = reshape(bipreproc(:,3),size(blue_channel));
+    bit4 = reshape(bipreproc(:,4),size(blue_channel));
+    bit5 = reshape(bipreproc(:,5),size(blue_channel));
+    bit6 = reshape(bipreproc(:,6),size(blue_channel));
+    bit7 = reshape(bipreproc(:,7),size(blue_channel));
+    bit8 = reshape(bipreproc(:,8),size(blue_channel));
     % figure()
     % subplot(421)
     % imshow(bit1,[])
@@ -107,10 +106,6 @@ function bw = red_channel_bitplaneslicing(I)
             label_per(i)=dotper(idx);
             label_ecc(i)=dotecc(idx);
         else
-            label_circ(i)=nan;
-            label_area(i)=nan;
-            label_per(i)=nan;
-            label_ecc(i)=nan;
         end
     end
     ratios = label_circ.*(label_area./(label_per.*label_ecc));
