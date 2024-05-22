@@ -56,15 +56,7 @@ subplot(133)
 imshow(cupdiscmask,[]); title('Disk/cup mask');
 %% 
 imforcup = uint8((double(Crop_Vessels_Removed(:,:,2))+double(Crop_Vessels_Removed(:,:,3)))/2);
-imforcupadj = imadjust(imforcup);
-imforcupadjgamma = im2uint8(imadjust(im2double(imforcupadj),[0 1],[0 1],1.5));
-imforcupgamma = im2uint8(imadjust(im2double(imforcup),[min(im2double(imforcup(:))) max(im2double(imforcup(:)))],[0 1],1.5));
-figure
-subplot(121)
-imshow(imforcupgamma); title('directo');
-subplot(122)
-imshow(imforcupadjgamma); title('dospasos');
-cuplogical = single_channel_bitplaneslicing(imforcupadjgamma);
+cupdiscmask2 = 
 cupdiscmask2 = bwredselected - cuplogical;
 figure
 subplot(131)
@@ -73,3 +65,14 @@ subplot(132)
 imshow(cuplogical,[]); title('Optic cup (2o intento)')
 subplot(133)
 imshow(cupdiscmask2,[]); title('Disk/cup mask');
+%% Otra prueba
+bwcup = opticcup_bitplaneslicing(Crop_Vessels_Removed);
+bwcupselected = selectseg(bwcup);
+cupdiscmask = bwredselected-bwcupselected;
+figure
+subplot(131)
+imshow(bwredselected,[]); title('Optic disk');
+subplot(132)
+imshow(bwcupselected,[]); title('Optic cup (1er intento)')
+subplot(133)
+imshow(cupdiscmask,[]); title('Disk/cup mask');

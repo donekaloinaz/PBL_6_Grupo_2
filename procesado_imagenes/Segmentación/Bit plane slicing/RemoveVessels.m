@@ -26,6 +26,6 @@ im_thre=imclose(im_thre,se);
 im_thre=imclose(im_thre,se);
 im_thre=imclose(im_thre,se);
 
-im_sin=inpaintCoherent(I,im_thre,"SmoothingFactor",4,"Radius",30);
+im_sin=inpaintCoherent(I,im_thre,"SmoothingFactor",2,"Radius",10);
 
 end
