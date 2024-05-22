@@ -1,4 +1,4 @@
-function bw = red_channel_bitplaneslicing(I)
+function bw = red_channel_bitplaneslicing(I,strelsize)
     red_channel = double(I(:,:,1));
     stdred = std(red_channel(:));
     red_channel = red_channel - stdred;
@@ -38,7 +38,7 @@ function bw = red_channel_bitplaneslicing(I)
     label_circ = zeros(1,11);
     label_per = zeros(1,11);
     label_ecc = zeros(1,11);
-    se = strel('disk',20,8);
+    se = strel('disk',strelsize,8);
     for i = 1:11
         switch i
             case 1

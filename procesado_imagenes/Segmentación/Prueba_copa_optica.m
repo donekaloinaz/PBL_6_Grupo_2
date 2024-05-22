@@ -1,7 +1,7 @@
 clear; close all; clc;
 load imagenes_buenas.mat
 %% 
-I = imread(im_sin_str5);
+I = imread(im_sin_str);
 figure
 subplot(121)
 imshow(I,[]); title('Image')
@@ -42,9 +42,9 @@ imshow(cropped_image_novessels,[]); title('Only removed once');
 subplot(133)
 imshow(cropped_image_wvessels,[]); title('Vessels not removed')
 %% 
-bwgreen = blue_channel_bitplaneslicing(Crop_Vessels_Removed);
+bwgreen = blue_channel_bitplaneslicing(Crop_Vessels_Removed,5);
 bwgreenselected = selectseg(bwgreen);
-bwred = red_channel_bitplaneslicing(Crop_Vessels_Removed);
+bwred = red_channel_bitplaneslicing(Crop_Vessels_Removed,5);
 bwredselected = selectseg(bwred);
 cupdiscmask = bwredselected-bwgreenselected;
 figure
@@ -64,7 +64,7 @@ subplot(121)
 imshow(imforcupgamma); title('directo');
 subplot(122)
 imshow(imforcupadjgamma); title('dospasos');
-cuplogical = single_channel_bitplaneslicing(imforcupadjgamma);
+cuplogical = select_last_bits(imforcupadjgamma);
 cupdiscmask2 = bwredselected - cuplogical;
 figure
 subplot(131)

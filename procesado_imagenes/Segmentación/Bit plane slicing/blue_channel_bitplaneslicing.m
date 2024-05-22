@@ -1,4 +1,4 @@
-function bw = blue_channel_bitplaneslicing(I)
+function bw = blue_channel_bitplaneslicing(I,strelsize)
     blue_channel = double(I(:,:,3));
     % figure
     % imshow(blue_channel,[]);
@@ -37,7 +37,7 @@ function bw = blue_channel_bitplaneslicing(I)
     label_circ = zeros(1,11);
     label_per = zeros(1,11);
     label_ecc = zeros(1,11);
-    se = strel('disk',20,8);
+    se = strel('disk',strelsize,8);
     for i = 1:11
         switch i
             case 1

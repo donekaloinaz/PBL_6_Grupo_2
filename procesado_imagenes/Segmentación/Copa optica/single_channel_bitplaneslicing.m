@@ -1,4 +1,4 @@
-function bw = single_channel_bitplaneslicing(I)
+function bw = single_channel_bitplaneslicing(I,strelsize)
     single_channel = double(I);
     stdsingle = std(single_channel(:));
     single_channel = single_channel - stdsingle;
@@ -38,7 +38,7 @@ function bw = single_channel_bitplaneslicing(I)
     label_circ = zeros(1,11);
     label_per = zeros(1,11);
     label_ecc = zeros(1,11);
-    se = strel('disk',20,8);
+    se = strel('disk',strelsize,8);
     for i = 1:11
         switch i
             case 1
@@ -113,7 +113,7 @@ function bw = single_channel_bitplaneslicing(I)
             label_ecc(i)=nan;
         end
     end
-    ratios = (label_area./(label_per));
+    ratios = label_circ.*(label_area./(label_per.*label_ecc));
     [~,ratio_idx] = max(ratios);
     switch ratio_idx
         case 1
