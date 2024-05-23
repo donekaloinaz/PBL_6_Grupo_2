@@ -59,11 +59,17 @@ imforcup = uint8((double(Crop_Vessels_Removed(:,:,2))+double(Crop_Vessels_Remove
 imforcupadj = imadjust(imforcup);
 imforcupadjgamma = im2uint8(imadjust(im2double(imforcupadj),[0 1],[0 1],1.5));
 imforcupgamma = im2uint8(imadjust(im2double(imforcup),[min(im2double(imforcup(:))) max(im2double(imforcup(:)))],[0 1],1.5));
+imforcupadjgammafilt = medfilt2(double(imforcupadjgamma),[5 5]);
+lapfilt = [0 1 0; 1 -4 1; 0 1 0];
+L = imfilter(imforcupadjgammafilt,lapfilt,'conv');
+imforcupadjgammafilt = uint8(imforcupadjgammafilt-L);
 figure
-subplot(121)
+subplot(131)
 imshow(imforcupgamma); title('directo');
-subplot(122)
+subplot(132)
 imshow(imforcupadjgamma); title('dospasos');
+subplot(133)
+imshow(imforcupadjgammafilt); title('dospasos filtrado')
 cuplogical = select_last_bits(imforcupadjgamma);
 cupdiscmask2 = bwredselected - cuplogical;
 figure
