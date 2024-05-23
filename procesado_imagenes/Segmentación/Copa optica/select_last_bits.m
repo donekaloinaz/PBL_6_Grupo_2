@@ -1,4 +1,4 @@
-function bwt = select_last_bits(I,disclogical)
+function bwt = select_last_bits(I,location)
     single_channel = double(I);
     stdsingle = std(single_channel(:));
     single_channel = single_channel - stdsingle;
@@ -22,30 +22,59 @@ function bwt = select_last_bits(I,disclogical)
 %     hold off
     
 
-oP = [statsd.Centroid(1), statsd.Centroid(2)];
-cP = [height(bw)/2, length(bw)/2];
+oP = ceil([statsd.Centroid(1), statsd.Centroid(2)]);
+cP = ceil([length(bw)/2, height(bw)/2]);
 dispV = cP - oP;
+a=20*location; %location debe ser -1 si el medio disco esta en la izquierda y 1 si esta en la derecha
+dispV = [dispV(2),dispV(1)+a];
 
-sI = circshift(bw, dispV);
+bws = circshift(bw, dispV);
 
-bwr = imrotate(sI, 180, 'bilinear', 'crop');
+bwr = imrotate(bws, 180, 'bilinear', 'crop');
 
 bwrs = circshift(bwr, -dispV);
 
 bwt= bw | bwrs;
+bwt=imfill(bwt,'Holes');
 
 figure;
-subplot(1, 3, 1);
 imshow(bw);
 title('Original Image');
+hold on 
+plot(statsd.Centroid(1),statsd.Centroid(2),'*')
+plot(length(bw)/2, height(bw)/2,'*')
+hold off
 
-subplot(1, 3, 2);
-imshow(bwrs);
-title('Rotated Image');
+% figure;
+% imshow(bws);
+% title('Shifted Image');
+% hold on 
+% plot(statsd.Centroid(1),statsd.Centroid(2),'*')
+% plot(length(bw)/2, height(bw)/2,'*')
+% hold off
+% 
+% figure;
+% imshow(bwr);
+% title('Rotated Image');
+% hold on 
+% plot(statsd.Centroid(1),statsd.Centroid(2),'*')
+% plot(length(bw)/2, height(bw)/2,'*')
+% hold off
+% 
+% figure;
+% imshow(bwrs);
+% title('Rotated and shifted Image');
+% hold on 
+% plot(statsd.Centroid(1),statsd.Centroid(2),'*')
+% plot(length(bw)/2, height(bw)/2,'*')
+% hold off
 
-subplot(1, 3, 3);
-imshow(bwrt);
-title('Restored Image');
-
+figure;
+imshow(bwt);
+title('Final Image');
+% hold on 
+% plot(statsd.Centroid(1),statsd.Centroid(2),'*')
+% plot(length(bw)/2, height(bw)/2,'*')
+% hold off
 
 end
