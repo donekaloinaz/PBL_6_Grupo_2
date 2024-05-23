@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>GADIN</title>
+		 <!-- font awesome cdn link  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<link rel="stylesheet" href="style.css" >
+	
+	</head>
+	<body>
+	<header>
+		<a href="#" class="logo">GADIN</a>
+		<nav class="navbar">
+			<ul>
+				<li><a href="#home">Inicio</a></li>
+				<li><a href="#about">Nosotros</a></li>
+				<li><a href="#" onclick="checkAuthentication(event)">Productos</a></li>
+				<li><a href="#opinions">Testimonios</a></li>
+				<li><a href="#frecuentes">Preguntas frecuentes</a></li>
+				<li><a href="#contact">Contacto</a></li>
+			</ul>
+		</nav>
+		<div class="fas fa-bars"></div>
+	</header>
+	
+	<section class="home" id="home">
+		<div class="content">
+			<h1 class="heading">Inicio</h1>
+			<p>¡Bienvenido al Sistema de Apoyo al Diagnóstico de Glaucoma! Somos tu aliado en la detección temprana y precisa 
+			de esta enfermedad ocular crítica. Nuestro avanzado sistema utiliza imágenes oftalmológicas para realizar un análisis detallado y 
+			clasificarlas con precisión, brindando a los profesionales médicos una herramienta invaluable para el diagnóstico y 
+			seguimiento del glaucoma. Con tecnología de vanguardia y un enfoque centrado en la salud visual, estamos comprometidos a mejorar 
+			la calidad de vida de pacientes mediante una detección temprana.</p>
+			
+			<p>Esta página web proporciona una plataforma centralizada para reflejar los datos vitales de la empresa, desde métricas financieras hasta 
+			actualizaciones de proyectos clave. Además de ser un repositorio de información crítica, sirve como un punto de contacto directo para aquellos 
+			que interactúan con la empresa, facilitando la comunicación fluida y la colaboración. Al permitir un acceso fácil y seguro a los datos, la 
+			plataforma también registra la visualización de información por parte del personal, lo que garantiza la transparencia y la responsabilidad en 
+			el manejo de los recursos y la toma de decisiones. En resumen, esta página web se erige como una herramienta fundamental para la gestión eficiente 
+			y efectiva de la empresa en la era digital.</p>
+		</div>
+	</section>
+	
+	<section class="about" id="about">
+		<h1 class="heading">Nosotros</h1>
+		<h3 class="title">¿Quiénes somos?</h3>
+		<div class="row">
+			<div class="image">
+				<img src="imágenes/GADIN.png">
+			</div>
+			<div class="content">
+				<p>¡Bienvenido a nuestra página web! Somos un equipo de estudiantes del tercer curso de Ingeniería Biomédica, 
+				apasionados por la innovación y comprometidos con mejorar la salud visual de las personas.</p>
+				<p>En nuestro proyecto actual, estamos desarrollando una tecnología de apoyo al diagnóstico de glaucoma. Con la ayuda de avanzadas técnicas 
+				de procesamiento de imágenes y análisis de datos, nuestro objetivo es proporcionar a los profesionales médicos una herramienta precisa y eficaz 
+				para detectar esta enfermedad ocular de forma temprana y brindar un tratamiento adecuado a los pacientes.</p>
+				<p>Nos inspira el desafío de aplicar nuestros conocimientos en ingeniería para contribuir al campo de la salud, y estamos emocionados de compartir 
+				nuestro progreso contigo. ¡Acompáñanos en este viaje mientras trabajamos para hacer una diferencia significativa en la lucha contra el glaucoma y 
+				mejorar la calidad de vida de las personas!</p>
+			</div>
+			<button onclick="checkAuthentication(event)">Saber más</button>
+		</div>
+	</section>
+	
+	<section class="products" id="products">
+		<h1 class="heading">Productos</h1>
+		<h3 class="title">Información sobre los productos y sus instrucciones y etiquetado</h3>
+		<button onclick="checkAuthentication(event)">Acceder a los datos</button>
+</section>
+	</section>
+	
+	<section class="opinions" id="opinions">
+		<h1 class="heading">Testimonios</h1>
+		<h3 class="title">Opiniones de nuestros usuarios</h3>
+			<div class="box-container">
+				<div class="box">
+					<img src="imágenes/foto1.jpg">
+					<h3>Usuario1</h3>
+					<p>"El sistema de apoyo al diagnóstico de glaucoma nos ha proporcionado una ventaja competitiva significativa en nuestro mercado. Su capacidad 
+					para ofrecer diagnósticos precisos y rápidos nos ha diferenciado de otras clínicas oftalmológicas en la región. Nuestros pacientes confían en 
+					nuestra capacidad para detectar y tratar el glaucoma de manera efectiva, lo que ha llevado a un aumento en la satisfacción del cliente y un 
+					crecimiento en nuestra base de pacientes. Sin duda, una inversión que ha valido la pena."</p>
+					<div class="stars">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+				</div>
+				
+				<div class="box">
+					<img src="imágenes/foto2.jpg">
+					<h3>Usuario2</h3>
+					<p>"El sistema de apoyo al diagnóstico de glaucoma ha sido una revelación para nuestra clínica. Su capacidad para analizar imágenes 
+					oftalmológicas de manera rápida y precisa nos ha permitido detectar casos de glaucoma en etapas tempranas, lo que ha sido fundamental 
+					para brindar un tratamiento oportuno a nuestros pacientes. Estamos muy impresionados con su eficacia y facilidad de uso. 
+					¡Una herramienta indispensable para cualquier profesional de la salud ocular!"</p>
+					<div class="stars">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+				</div>
+				
+				<div class="box">
+					<img src="imágenes/pic3.jpg">
+					<h3>Usuario3</h3>
+					<p>"Nuestro equipo médico ha experimentado una notable mejora en nuestra capacidad para diagnosticar y tratar el glaucoma desde que 
+					implementamos este sistema de apoyo al diagnóstico. Su interfaz intuitiva y análisis detallado de las imágenes nos han permitido agilizar 
+					nuestros procesos y mejorar la precisión de nuestros diagnósticos. Estamos extremadamente agradecidos por esta herramienta, que realmente 
+					facilita nuestro trabajo diario y beneficia a nuestros pacientes."</p>
+					<div class="stars">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+					</div>
+				</div>
+				
+			</div>
+		
+		
+		</section>
+		
+	<section id="frecuentes">
+	<h1 class="heading">Preguntas Frecuentes</h1>
+	<h3 class="title">Encuentra respuestas a tus preguntas más comunes sobre nuestro SW de diagnóstico de glaucoma</h3>
+		<div class="frecuentes">
+			<div class="question" onclick="toggleAnswer(1)">¿Cómo puede ayudar este SW en el diagnóstico temprano del glaucoma?</div>
+			<div class="answer" id="answer1">Nuestro software utiliza algoritmos avanzados de análisis de imágenes y datos clínicos para 
+			detectar signos tempranos de glaucoma, lo que permite a los oftalmólogos realizar diagnósticos más precisos y oportunos.</div>
+			
+			<div class="question" onclick="toggleAnswer(2)">¿Cuál es la precisión del SW en la detección de signos tempranos de glaucoma?</div>
+			<div class="answer" id="answer2">Nuestro software ha demostrado una precisión superior en la detección temprana del glaucoma, con 
+			una tasa de aciertos del XX% en estudios clínicos y validaciones independientes.</div>
+			
+			<div class="question" onclick="toggleAnswer(3)">¿Qué tipo de pruebas o datos utiliza el SW para realizar el diagnóstico?</div>
+			<div class="answer" id="answer3">PREGUNTAR A DONEKA E IBON</div>
+			
+			<div class="question" onclick="toggleAnswer(4)">¿Este SW puede utilizarse como herramienta complementaria al examen clínico realizado por un oftalmólogo?</div>
+			<div class="answer" id="answer4">Sí, nuestro software está diseñado para complementar la evaluación clínica realizada por un oftalmólogo. Proporciona información 
+			adicional y análisis avanzados que pueden ayudar al médico en la toma de decisiones clínicas..</div>
+		
+			<div class="question" onclick="toggleAnswer(5)">¿El SW ofrece recomendaciones de tratamiento basadas en los resultados obtenidos?</div>
+			<div class="answer" id="answer5">No, este SW únicamente ofrece un apoyo inicial en la filtración de las imágenes, pero no forma parte del 
+			proceso de selección de tratamiento</div>
+		</div>
+		<script>
+			function toggleAnswer(id) {
+				var answer = document.getElementById("answer" + id);
+				if (answer.style.display === "block") {
+					answer.style.display = "none";
+				} else {
+					answer.style.display = "block";
+				}
+			}
+		</script>
+	</section>
+		
+		
+	<section id="contact">
+    <h1 class="heading">Contacto</h2>
+    <p>¿Tienes alguna pregunta o comentario? ¡No dudes en ponerte en contacto con nosotros!</p>
+    <form action="#" method="post">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+            <label for="contacto">Correo electrónico o Teléfono:</label>
+            <input type="text" id="contacto" name="contacto" required>
+        </div>
+        <div>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit">Enviar mensaje</button>
+    </form>
+</section>
+<script src="web.js"></script>
+	</body>
+</html>

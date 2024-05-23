@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>PRODUCTOS</title>
+		 <!-- font awesome cdn link  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<link rel="stylesheet" href="style3.css" >
+	
+	</head>
+	<body>
+	<header>
+		<a href="#" class="logo">PRODUCTOS</a>
+		<nav class="navbar">
+			<ul>
+				<li><a href="#instrucciones">Instrucciones</a></li>
+				<li><a href="#etiqueta">Etiqueta</a></li>
+				<li><a href="#declaracion">Declaración</a></li>
+				<li><a href="#descarga">Descargar aplicación</a></li>
+				<li><a href="#basedatos">Base de datos</a></li>
+			</ul>
+		</nav>
+		<div class="fas fa-bars"></div>
+	</header>
+	<section class="instrucciones"id="instrucciones">
+		<h1 class="heading">Instrucciones de Uso</h1>
+			<img src="documentos/Instrucciones.png">
+			<a href="documentos/Instrucciones.pdf" target="_blank">Ver PDF</a>
+	</section>
+	<section class="etiqueta" id="etiqueta">
+		<h1 class="heading">Etiqueta</h1>
+	</section>
+	<section class="declaracion" id="declaracion">
+		<h1 class="heading">Declaración UE de conformidad</h1>
+	</section>
+	<section class="descarga" id="descarga">
+		<h1 class="heading">Descargar aplicación</h1>
+		<div class="box-container">
+				
+				<div class="box">
+					<i class="fab fa-linux"></i>
+					<h3>Linux</h3>
+					<button onclick="redireccionar()">Clica para descargar</button>
+
+				</div>
+				
+				<div class="box">
+					<i class="fab fa-apple"></i>
+					<h3>MacOs</h3>
+					<button onclick="redireccionar2()">Clica para descargar</button>
+				</div>
+				
+				<div class="box">
+					<i class="fab fa-android"></i>
+					<h3>Windows</h3>
+					<button onclick="redireccionar3()">Clica para descargar</button>
+				</div>
+				<script>
+					function redireccionar() {
+						window.location.href = 'descargalinux.html';
+					}
+				</script>
+				<script>
+					function redireccionar2() {
+						window.location.href = 'descargarMacOs.html';
+					}
+				</script>
+				<script>
+					function redireccionar3() {
+						window.location.href = 'descargarWindows.html';
+					}
+				</script>
+				
+			</div>
+	</section>
+	<section class="basedatos" id="basedatos">
+		<h1 class="heading">Base de datos</h1>
+	</section>
+	</body>
+</html>
