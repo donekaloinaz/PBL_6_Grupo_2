@@ -37,13 +37,13 @@ bwrs = circshift(bwr, -dispV);
 bwt= bw | bwrs;
 bwt=imfill(bwt,'Holes');
 
-figure;
-imshow(bw);
-title('Original Image');
-hold on 
-plot(statsd.Centroid(1),statsd.Centroid(2),'*')
-plot(length(bw)/2, height(bw)/2,'*')
-hold off
+% figure;
+% imshow(bw);
+% title('Original Image');
+% hold on 
+% plot(statsd.Centroid(1),statsd.Centroid(2),'*')
+% plot(length(bw)/2, height(bw)/2,'*')
+% hold off
 
 % figure;
 % imshow(bws);
@@ -69,9 +69,9 @@ hold off
 % plot(length(bw)/2, height(bw)/2,'*')
 % hold off
 
-figure;
-imshow(bwt);
-title('Final Image');
+% figure;
+% imshow(bwt);
+% title('Final Image');
 % hold on 
 % plot(statsd.Centroid(1),statsd.Centroid(2),'*')
 % plot(length(bw)/2, height(bw)/2,'*')

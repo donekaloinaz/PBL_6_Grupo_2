@@ -1,4 +1,4 @@
-function ISNT = calcISNT(bwseg,centre,I)
+function ISNT = calcISNT(bwseg,centre,I,ISNTadequate)
 if centre(2) > (width(I)/2)
     rightside = false;
 else
@@ -18,7 +18,9 @@ else
 end
 I = sum(bwseg(row:1:height(bwseg),col));
 S = sum(bwseg(row:-1:1,col));
-if (I >= S) & (S >= N) & (N >= T)
+if ISNTadequate == false
+    ISNT = 2;
+elseif (I >= S) & (S >= N) & (N >= T)
     ISNT = 1;
 else
     ISNT = 0;
