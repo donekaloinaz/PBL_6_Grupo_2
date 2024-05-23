@@ -4,7 +4,7 @@ load imagenes_limpias_predict.mat
 figure
 imshow(I,[])
 %% 
-[VesselsRemoved,bw,bwselected,segmented_I,cropped_image_novessels,cropped_image_wvessels,segblue] = Bit_plane_slicing_segmentation(I);
+[VesselsRemoved,bw,bwselected,segmented_I,cropped_image_novessels,cropped_image_wvessels,centre,segblue] = Bit_plane_slicing_segmentation(I);
 figure
 subplot(221)
 imshow(bw,[]);

@@ -1,6 +1,6 @@
-clear; close all; clc;
-load imagenes_limpias_predict.mat
-[I,im_sin_str] = imagenlimpiarandom(imlimpiaspredict);
+% clear; close all; clc;
+% load imagenes_limpias_predict.mat
+% [I,im_sin_str] = imagenlimpiarandom(imlimpiaspredict);
 figure
 imshow(I,[])
 %% 
@@ -34,7 +34,7 @@ imshow(green_channel_vremoved,[]); title('Green Channel');
 subplot(313)
 imshow(blue_channel_vremoved,[]); title('Blue Channel');
 %%
-[VesselsRemoved, bw, bwselected, segmented_I, cropped_image_novessels, cropped_image_wvessels, segblue] = Bit_plane_slicing_segmentation(I);
+[VesselsRemoved, bw, bwselected, segmented_I, cropped_image_novessels, cropped_image_wvessels, centre, segblue] = Bit_plane_slicing_segmentation(I);
 Crop_Vessels_Removed = RemoveVessels(cropped_image_novessels);
 figure
 subplot(131)
@@ -57,12 +57,7 @@ imshow(bwgreenselected,[]); title('Optic cup (1er intento)')
 subplot(133)
 imshow(cupdiscmask,[]); title('Disk/cup mask');
 %% 
-if mean(Crop_Vessels_Removed(:,:,1),'all')>170
-    discsegment = blue_channel_bitplaneslicing(Crop_Vessels_Removed,5);
-else
-    discsegment = red_channel_bitplaneslicing(Crop_Vessels_Removed,5);
-end
-[disclogical,~] = selectseg(discsegment);
+disclogical = crop_image(centre,bwselected,bwselected);
 imforcup = uint8((double(Crop_Vessels_Removed(:,:,2))+double(Crop_Vessels_Removed(:,:,3)))/2);
 imforcupadj = imadjust(imforcup);
 imforcupadjgamma = im2uint8(imadjust(im2double(imforcupadj),[0 1],[0 1],1.5));
@@ -87,5 +82,3 @@ subplot(132)
 imshow(cuplogical,[]); title('Optic cup (2o intento)')
 subplot(133)
 imshow(cupdiscmask2,[]); title('Disk/cup mask');
-%% 
-segfeatures = getsegfeatures(cupdiscmask2,bwredselected);
