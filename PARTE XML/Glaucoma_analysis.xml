@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Glaucoma_analisis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="Glaucoma_analysis.xsd">
+	<Paciente codigo="1111AAA">
+		<DNI>74552124F</DNI>
+		<Nombre>Marcos</Nombre>
+		<Apellido1>Lopez</Apellido1>
+		<Apellido2>Garcia</Apellido2>
+		<Sexo>Hombre</Sexo>
+		<Edad>45</Edad>
+		<Analisis id="0001">
+			<Ojo imagen="image_0001.jpg"></Ojo>
+			<Fecha>23-05-2024</Fecha>
+			<Diagnostico>Positivo</Diagnostico>
+			<Calidad>Buena</Calidad>
+		</Analisis>
+	</Paciente>
+</Glaucoma_analisis>

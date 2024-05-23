@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Glaucoma_analisis">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Paciente" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DNI">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="[1-9]{8}[A-Z]"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Nombre">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="[A-Z]([a-z])+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Apellido1">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="[A-Z]([a-z])+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Apellido2">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:pattern value="[A-Z]([a-z])+"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Sexo">
+								<xs:simpleType>
+									<xs:restriction base="xs:boolean">
+										<xs:pattern value="Hombre|Mujer"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Edad">
+								<xs:simpleType>
+									<xs:restriction base="xs:integer">
+										<xs:minInclusive value="18"></xs:minInclusive>
+										<xs:maxInclusive value="110"></xs:maxInclusive>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Analisis">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Ojo"></xs:element>
+										<xs:element name="Fecha" type="date"></xs:element>
+										<xs:element name="Diagnostico">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:pattern value="Positivo|Negativo"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Calidad">
+											<xs:simpleType>
+												<xs:restriction base="xs:boolean">
+													<xs:pattern value="Buena|Mala"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="id">
+										<xs:simpleType>
+											<xs:restriction base="xs:integer">
+												<xs:pattern value="[0-9]{4}"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="codigo">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="[0-9]{4}[A-Z]{3}"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
