@@ -33,5 +33,6 @@ function [bwselected,centre] = selectseg(bw)
     bwselected = false(size(bw));
     bwselected(sub2ind(size(bw), pixels(:, 2), pixels(:, 1))) = true;
     bwselected = imclose(bwselected,strel('disk',20,8));
+    bwselected = imfill(bwselected,'holes');
     centre = round(statsd.Centroid(ratio_idx,:));
 end

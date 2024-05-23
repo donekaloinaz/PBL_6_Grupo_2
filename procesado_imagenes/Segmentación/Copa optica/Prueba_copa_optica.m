@@ -1,7 +1,9 @@
 clear; close all; clc;
-load imagenes_buenas.mat
+load imagenes_limpias_predict.mat
+[I,im_sin_str] = imagenlimpiarandom(imlimpiaspredict);
+figure
+imshow(I,[])
 %% 
-I = imread(im_sin_str);
 figure
 subplot(121)
 imshow(I,[]); title('Image')
@@ -55,6 +57,12 @@ imshow(bwgreenselected,[]); title('Optic cup (1er intento)')
 subplot(133)
 imshow(cupdiscmask,[]); title('Disk/cup mask');
 %% 
+if mean(Crop_Vessels_Removed(:,:,1),'all')>170
+    discsegment = blue_channel_bitplaneslicing(Crop_Vessels_Removed,5);
+else
+    discsegment = red_channel_bitplaneslicing(Crop_Vessels_Removed,5);
+end
+[disclogical,~] = selectseg(discsegment);
 imforcup = uint8((double(Crop_Vessels_Removed(:,:,2))+double(Crop_Vessels_Removed(:,:,3)))/2);
 imforcupadj = imadjust(imforcup);
 imforcupadjgamma = im2uint8(imadjust(im2double(imforcupadj),[0 1],[0 1],1.5));
@@ -71,14 +79,13 @@ imshow(imforcupadjgamma); title('dospasos');
 subplot(133)
 imshow(imforcupadjgammafilt); title('dospasos filtrado')
 cuplogical = select_last_bits(imforcupadjgamma);
-cupdiscmask2 = bwredselected - cuplogical;
+cupdiscmask2 = disclogical - cuplogical;
 figure
 subplot(131)
-imshow(bwredselected,[]); title('Optic disk');
+imshow(disclogical,[]); title('Optic disk');
 subplot(132)
 imshow(cuplogical,[]); title('Optic cup (2o intento)')
 subplot(133)
 imshow(cupdiscmask2,[]); title('Disk/cup mask');
-% Para sacar features hacer lo de rotar y contar longitud maxima para sacar
-% el diametro, probar tambien pasar por filtros (pase bajo primero y luego
-% pase alto) para binarizar mejor
+%% 
+segfeatures = getsegfeatures(cupdiscmask2,bwredselected);
