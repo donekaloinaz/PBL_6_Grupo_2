@@ -48,14 +48,14 @@ bwgreen = blue_channel_bitplaneslicing(Crop_Vessels_Removed,5);
 bwgreenselected = selectseg(bwgreen);
 bwred = red_channel_bitplaneslicing(Crop_Vessels_Removed,5);
 bwredselected = selectseg(bwred);
-cupdiscmask = bwredselected-bwgreenselected;
+cupdiscmaskwrong = bwredselected-bwgreenselected;
 figure
 subplot(131)
 imshow(bwredselected,[]); title('Optic disk');
 subplot(132)
 imshow(bwgreenselected,[]); title('Optic cup (1er intento)')
 subplot(133)
-imshow(cupdiscmask,[]); title('Disk/cup mask');
+imshow(cupdiscmaskwrong,[]); title('Disk/cup mask');
 %% 
 disclogical = crop_image(centre,bwselected,bwselected);
 imforcup = uint8((double(Crop_Vessels_Removed(:,:,2))+double(Crop_Vessels_Removed(:,:,3)))/2);
@@ -73,12 +73,15 @@ subplot(132)
 imshow(imforcupadjgamma); title('dospasos');
 subplot(133)
 imshow(imforcupadjgammafilt); title('dospasos filtrado')
-cuplogical = select_last_bits(imforcupadjgamma);
-cupdiscmask2 = disclogical - cuplogical;
+cuplogical = select_last_bits_old(imforcupadjgamma);
+cupdiscmask = disclogical - cuplogical;
 figure
 subplot(131)
 imshow(disclogical,[]); title('Optic disk');
 subplot(132)
 imshow(cuplogical,[]); title('Optic cup (2o intento)')
 subplot(133)
-imshow(cupdiscmask2,[]); title('Disk/cup mask');
+imshow(cupdiscmask,[]); title('Disk/cup mask');
+%%
+cupcorrected = select_last_bits(imforcupadjgamma);
+cupdiscmaskcorrected = disclogical - cupcorrected;

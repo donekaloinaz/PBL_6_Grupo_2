@@ -8,10 +8,11 @@ cuptodiscratio = areacup/areadisc;
 %% ISNT rule
 ISNT = calcISNT(bwseg,centre,I);
 %%
-ISNTcupcorrected = calcISNT(bwseg,bwcupcorrected,centre,I)
+ISNTcupcorrected = calcISNT(bwseg,bwcupcorrected,centre,I);
 %% Build features struct
 segfeatures.areacup = arecup;
 segfeatures.areadisc = areadisc;
 segfeatures.cuptodiscratio = cuptodiscratio;
 segfeatures.ISNT = ISNT;
+segfeatures.ISNTcupcorrected = ISNTcupcorrected;
 end
