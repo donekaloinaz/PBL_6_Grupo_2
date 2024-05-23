@@ -73,3 +73,6 @@ subplot(132)
 imshow(cuplogical,[]); title('Optic cup (2o intento)')
 subplot(133)
 imshow(cupdiscmask2,[]); title('Disk/cup mask');
+% Para sacar features hacer lo de rotar y contar longitud maxima para sacar
+% el diametro, probar tambien pasar por filtros (pase bajo primero y luego
+% pase alto) para binarizar mejor
