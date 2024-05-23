@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap');
+
+* {
+	font-family: 'Arial', sans-serif;
+	text-transform: capitalize;
+	text-decoration:none;
+	outline: none;
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	
+}
+*::selection {
+	background:#ff046f;
+	color:#fff;
+}
+
+html {
+	font-size: 85%;
+	overflow-x: hidden;
+}
+
+body {
+	background: #fff0f5;
+}
+.heading {
+	font-size: 4rem;
+	color:#ff046f;
+	text-align:center;
+	padding: 6rem 1rem 0 0;
+	letter-spacing: .2rem;
+	font-weight: 500;
+}
+.title{
+	padding: 0 1rem;
+	text-align: center;
+	font-weight: 400;
+	font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+header {
+	width:100%;
+	background:#ff9999;
+	position:fixed;
+	display:flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 2rem;
+	z-index: 1000;
+	transition: .2s;
+}
+header .navbar ul {
+	display:flex;
+	align-items: center;
+	justify-content: space-between;
+	list-style:none;
+}
+
+header .navbar ul li {
+	margin: 0 1rem;
+}
+
+header .navbar ul li a {
+	font-size: 2rem;
+	color:#fff;
+	transition: .2s;
+}
+
+header .navbar ul li .active,
+header .navbar ul li a:hover {
+	color:#ff046f;
+}
+
+header .logo {
+	font-size: 2.5rem;
+	color:#fff;
+	text-transform:uppercase
+}
+
+header .fa-bars {
+	font-size:3rem;
+	color:#ff046f;
+	cursor:pointer;
+	display:none;
+	transition: .2s;
+}
+.home {
+    min-height: 60vh;
+    background: linear-gradient(rgba(173, 216, 230, 0.8), rgba(255, 182, 193, 0.8)), url(imágenes/bg.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.home .content p {
+	font-size: 1rem;
+	color: #00000;
+	text-align:center;
+}
+.about {
+	background:#fff0f5;
+	
+}
+.about .title {
+	margin-bottom: 3rem;
+	
+}
+.about .row {
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+}
+.about .row .content {
+	margin: 5rem 5rem;
+	
+}
+.about .row .content p {
+	font-size: 1rem;
+	color:#00000;
+	padding:1rem 0;
+}
+.products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.products button{
+	height: 2.5rem;
+	width: 10rem;
+	border-radius: 1rem;
+	background:#ff046f;
+	color:#fff;
+	font-size: 1rem;
+	cursor: pointer;
+	transition:.2s;
+	box-shadow:0 .3rem 1rem rgba(0,0,0,.3);
+	margin-top: 2rem;
+	border-color:#ff046f;
+	align-items:center;
+
+}
+.opinions {
+	background: #fff0f5;
+	
+}
+.opinions .box-container {
+	display: flex;
+	justify-content: center;
+	padding-top: 4rem;
+	flex-wrap: wrap;
+}
+
+.opinions .box-container .box {
+	width: 28rem;
+	padding-bottom: 1rem;
+	text-align: center;
+	box-shadow:0 .3rem 5rem rgba(0,0,0,.3);
+	background: #48567a;
+	margin: 4rem 2rem;
+}
+
+.opinions .box-container .box img {
+	height: 8.5rem;
+	width: 8.5rem;
+	object-fit:cover;
+	border-radius:50%;
+	margin-top:-4rem;
+	border: .6rem solid #ff046f;
+	border-left: .6rem solid #c63bfa;
+	border-bottom: .6rem solid #c63bfa;
+}
+
+.opinions .box-container .box h3 {
+	font-size: 2rem;
+	color: #ff046f;
+	padding: 0 .5rem;
+}
+
+.opinions .box-container .box p {
+	font-size: 1rem;
+	color:#fff;
+	padding: 1.3rem .1rem;
+}
+
+.opinions .box-container .box .stars i {
+	font-size: 1.6rem;
+	color: #c63bfa;
+	padding: 1.3rem .1rem;
+}
+
+#frecuentes {
+    padding: 20px;
+    background-color: #fff0f5;
+}
+
+.question {
+    font-weight: bold;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    padding: 10px;
+}
+
+.answer {
+    margin-bottom: 15px;
+    display: none;
+    padding: 10px;
+}
+#contact {
+    background-color: #fff0f5;
+    padding: 50px;
+    text-align: center;
+}
+
+#contact p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact form div {
+    margin-bottom: 20px;
+}
+
+#contact form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#contact form input[type="text"],
+#contact form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact form textarea {
+    height: 150px;
+}
+
+#contact form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff046f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact form button:hover {
+    background-color: #ff0240;
+}
+
