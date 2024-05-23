@@ -1,6 +1,6 @@
 function [VesselsRemoved,bw,bwselected,segmented_I,cropped_image_novessels,cropped_image_wvessels,centre,segblue] = Bit_plane_slicing_segmentation(I)
     VesselsRemoved = RemoveVessels(I);
-    if mean(VesselsRemoved(:,:,1),'all')>170
+    if mean(VesselsRemoved(:,:,1),'all')>160
         segblue = true;
         bw = green_channel_bitplaneslicing(VesselsRemoved,20);
     else
