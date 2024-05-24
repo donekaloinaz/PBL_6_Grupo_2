@@ -7,35 +7,18 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Nombre" type="xs:string"/>
-							<xs:element name="Apellido" type="xs:string"/>
-							<xs:element name="Id" type="xs:string"/>
-							<xs:element name="Mobile_phone">
-								<xs:simpleType> 
-									<xs:restriction base="xs:string">
-										<xs:pattern value="[0-9]{9}"/> 
-									</xs:restriction> 
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="Email">
-								<xs:simpleType> 
-									<xs:restriction base="xs:string">
-										<xs:pattern value="([a-zA-Z0-9_.])+@([a-zA-Z])+.([a-zA-Z])+"/> 
-									</xs:restriction> 
-								</xs:simpleType>
-							</xs:element>	
-							<!--xs:attribute name="id">
-								<xs:simpleType>
-									<xs:restriction base="xs:string">
-										<xs:pattern value="[0-9]{4}[A-Z]{3}"/> 
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:attribute-->
+                            <xs:element name="Apellido" type="xs:string"/>
+                            <xs:element name="Id" type="xs:string"/>
+                            <xs:element name="Mobile_phone" type="xs:string"/>
+                            <xs:element name="Email" type="xs:string"/>
                             <xs:element name="Doctor" type="xs:string"/>
-							<xs:element name="Imagen">
-								<xs:complexType>
-									<xs:attribute name="Imagen" type="xs:string"/>
-								</xs:complexType>
-							</xs:element>
+                            <xs:element name="Fecha_de_diagnostico" type="xs:string"/>
+                            <xs:element name="Estado_de_glaucoma" type="xs:string"/>
+                            <xs:element name="Imagen">
+                                <xs:complexType>
+                                    <xs:attribute name="Imagen" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

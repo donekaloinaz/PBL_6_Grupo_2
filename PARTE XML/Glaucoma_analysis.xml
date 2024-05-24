@@ -1,50 +1,81 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="Glaucoma_analysis.xslt"?>
-
-<Pacientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Glaucoma_analysis.xsd"> 
+<Pacientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Glaucoma_analysis.xsd">
     <paciente>
         <Nombre>Juan</Nombre>
-		<Apellido>Perez</Apellido>
+        <Apellido>Perez</Apellido>
         <Id>1234ABDC</Id>
-		<Mobile_phone>635319057</Mobile_phone>
-		<Email>jperez@mondragon.edu</Email>
+        <Mobile_phone>635319057</Mobile_phone>
+        <Email>jperez@mondragon.edu</Email>
         <Doctor>Dr. Smith</Doctor>
-		<Imagen Imagen="nervio.jpg"/>
+        <Fecha_de_diagnostico>01/05/2023</Fecha_de_diagnostico>
+        <Estado_de_glaucoma>Leve</Estado_de_glaucoma>
+        <Imagen Imagen="nervio.jpg"/>
     </paciente>
     <paciente>
         <Nombre>Ana</Nombre>
-		<Apellido>Gomez</Apellido>
+        <Apellido>Gomez</Apellido>
         <Id>67890</Id>
-		<Mobile_phone>635338957</Mobile_phone>
-		<Email>agomez@mondragon.edu</Email>
+        <Mobile_phone>635338957</Mobile_phone>
+        <Email>agomez@mondragon.edu</Email>
         <Doctor>Dr. Johnson</Doctor>
-		<Imagen Imagen="nervio.jpg"/>
+        <Fecha_de_diagnostico>15/02/2023</Fecha_de_diagnostico>
+        <Estado_de_glaucoma>Moderado</Estado_de_glaucoma>
+        <Imagen Imagen="nervio.jpg"/>
     </paciente>
-	 <paciente>
+    <paciente>
         <Nombre>Juan</Nombre>
-		<Apellido>Martin</Apellido>
+        <Apellido>Martin</Apellido>
         <Id>1234ABDC</Id>
-		<Mobile_phone>638979057</Mobile_phone>
-		<Email>jmartin@mondragon.edu</Email>
+        <Mobile_phone>638979057</Mobile_phone>
+        <Email>jmartin@mondragon.edu</Email>
         <Doctor>Dr. Johnson</Doctor>
-		<Imagen Imagen="nervio.jpg"/>
+        <Fecha_de_diagnostico>20/03/2023</Fecha_de_diagnostico>
+        <Estado_de_glaucoma>Severo</Estado_de_glaucoma>
+        <Imagen Imagen="nervio.jpg"/>
     </paciente>
-	 <paciente>
+    <paciente>
         <Nombre>Pablo</Nombre>
-		<Apellido>Lopez</Apellido>
+        <Apellido>Lopez</Apellido>
         <Id>1234ABDC</Id>
-		<Mobile_phone>635975057</Mobile_phone>
-		<Email>plopez@mondragon.edu</Email>
+        <Mobile_phone>635975057</Mobile_phone>
+        <Email>plopez@mondragon.edu</Email>
         <Doctor>Dr. Johnson</Doctor>
-		<Imagen Imagen="nervio.jpg"/>
+        <Fecha_de_diagnostico>10/02/2023</Fecha_de_diagnostico>
+        <Estado_de_glaucoma>Leve</Estado_de_glaucoma>
+        <Imagen Imagen="nervio.jpg"/>
     </paciente>
-	 <paciente>
+    <paciente>
         <Nombre>Tomas</Nombre>
-		<Apellido>Gomez</Apellido>
+        <Apellido>Gomez</Apellido>
         <Id>1234ABDC</Id>
-		<Mobile_phone>635789057</Mobile_phone>
-		<Email>tgomwz@mondragon.edu</Email>
+        <Mobile_phone>635789057</Mobile_phone>
+        <Email>tgomez@mondragon.edu</Email>
         <Doctor>Dr. Johnson</Doctor>
-		<Imagen Imagen="nervio.jpg"/>
+        <Fecha_de_diagnostico>30/01/2023</Fecha_de_diagnostico>
+        <Estado_de_glaucoma>Moderado</Estado_de_glaucoma>
+        <Imagen Imagen="nervio.jpg"/>
+    </paciente>
+    <paciente>
+        <Nombre>Laura</Nombre>
+        <Apellido>Sanchez</Apellido>
+        <Id>5678EFGH</Id>
+        <Mobile_phone>635123456</Mobile_phone>
+        <Email>lsanchez@mondragon.edu</Email>
+        <Doctor>Dr. Smith</Doctor>
+        <Fecha_de_diagnostico>25/06/2023</Fecha_de_diagnostico>
+        <Estado_de_glaucoma>Leve</Estado_de_glaucoma>
+        <Imagen Imagen="nervio.jpg"/>
+    </paciente>
+    <paciente>
+        <Nombre>Pedro</Nombre>
+        <Apellido>Garcia</Apellido>
+        <Id>9101IJKL</Id>
+        <Mobile_phone>635654321</Mobile_phone>
+        <Email>pgarcia@mondragon.edu</Email>
+        <Doctor>Dr. Johnson</Doctor>
+        <Fecha_de_diagnostico>10/07/2023</Fecha_de_diagnostico>
+        <Estado_de_glaucoma>Severo</Estado_de_glaucoma>
+        <Imagen Imagen="nervio.jpg"/>
     </paciente>
 </Pacientes>
