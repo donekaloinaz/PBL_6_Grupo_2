@@ -27,6 +27,9 @@ for i = 1:length(imlimpiaspredict)
     gabor_features = Gabor_features(rgb2gray(croppedim),gaborbank);
     catgabor = cat(2,gabor_features.gabor1,gabor_features.gabor2,gabor_features.gabor3,gabor_features.gabor4,gabor_features.gabor5,gabor_features.gabor6,gabor_features.gabor7,gabor_features.gabor8);
     catfeatures = cat(2,catseg,catwavelet,catgabor);
-    features(i,:) = num2cell(catfeatures);
+    featurerow = num2cell(catfeatures);
+    features(i,:) = featurerow;
+    savename = strcat("featuresfila",num2str(i),".mat");
+    save(savename,"featurerow");
 end
 save("image_features.mat","features");
