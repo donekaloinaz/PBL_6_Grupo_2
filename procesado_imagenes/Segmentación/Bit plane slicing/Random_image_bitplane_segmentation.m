@@ -9,7 +9,7 @@ figure
 subplot(221)
 imshow(bw,[]);
 if segblue == true
-    title('Segmentación mediante canal azul');
+    title('Segmentación mediante canal verde');
 else
     title('Segmentación mediante canal rojo');
 end
