@@ -1,0 +1,22 @@
+h1, h2 {
+	color: blue;
+	font-size: 30px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+p {
+	color: rgb(32,32,32);
+	text-align: left;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 50px 50px;	
+}
+
+img {
+	width: 50px;	
+}

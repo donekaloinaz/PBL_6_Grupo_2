@@ -10,14 +10,14 @@ end
 col = centre(2);
 row = centre(1);
 if rightside == true
-    T = sum(bwseg(row,col:-1:1));
+    T = sum(bwseg(row,1:col));
     N = sum(bwseg(row,col:1:width(bwseg)));
 else
-    N = sum(bwseg(row,col:-1:1));
+    N = sum(bwseg(row,1:col));
     T = sum(bwseg(row,col:1:width(bwseg)));
 end
 I = sum(bwseg(row:1:height(bwseg),col));
-S = sum(bwseg(row:-1:1,col));
+S = sum(bwseg(1:row,col));
 if ISNTadequate == false
     ISNT = 2;
 elseif (I >= S) & (S >= N) & (N >= T)
