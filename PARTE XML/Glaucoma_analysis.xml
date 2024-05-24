@@ -1,19 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="Glaucoma_analysis.xslt"?>
 
-<Glaucoma_analisis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="Glaucoma_analysis.xsd">
-	<Paciente codigo="1111AAA">
-		<DNI>74552124F</DNI>
-		<Nombre>Marcos</Nombre>
-		<Apellido1>Lopez</Apellido1>
-		<Apellido2>Garcia</Apellido2>
-		<Sexo>Hombre</Sexo>
-		<Edad>45</Edad>
-		<Analisis id="0001">
-			<Ojo imagen="image_0001.jpg"></Ojo>
-			<Fecha>23-05-2024</Fecha>
-			<Diagnostico>Positivo</Diagnostico>
-			<Calidad>Buena</Calidad>
-		</Analisis>
-	</Paciente>
-</Glaucoma_analisis>
+<Pacientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Glaucoma_analysis.xsd"> 
+    <paciente>
+        <Nombre>Juan</Nombre>
+		<Apellido>Perez</Apellido>
+        <Id>1234ABDC</Id>
+		<Mobile_phone>635319057</Mobile_phone>
+		<Email>jperez@mondragon.edu</Email>
+        <Doctor>Dr. Smith</Doctor>
+		<Imagen Imagen="nervio.jpg"/>
+    </paciente>
+    <paciente>
+        <Nombre>Ana</Nombre>
+		<Apellido>Gomez</Apellido>
+        <Id>67890</Id>
+		<Mobile_phone>635338957</Mobile_phone>
+		<Email>agomez@mondragon.edu</Email>
+        <Doctor>Dr. Johnson</Doctor>
+		<Imagen Imagen="nervio.jpg"/>
+    </paciente>
+	 <paciente>
+        <Nombre>Juan</Nombre>
+		<Apellido>Martin</Apellido>
+        <Id>1234ABDC</Id>
+		<Mobile_phone>638979057</Mobile_phone>
+		<Email>jmartin@mondragon.edu</Email>
+        <Doctor>Dr. Johnson</Doctor>
+		<Imagen Imagen="nervio.jpg"/>
+    </paciente>
+	 <paciente>
+        <Nombre>Pablo</Nombre>
+		<Apellido>Lopez</Apellido>
+        <Id>1234ABDC</Id>
+		<Mobile_phone>635975057</Mobile_phone>
+		<Email>plopez@mondragon.edu</Email>
+        <Doctor>Dr. Johnson</Doctor>
+		<Imagen Imagen="nervio.jpg"/>
+    </paciente>
+	 <paciente>
+        <Nombre>Tomas</Nombre>
+		<Apellido>Gomez</Apellido>
+        <Id>1234ABDC</Id>
+		<Mobile_phone>635789057</Mobile_phone>
+		<Email>tgomwz@mondragon.edu</Email>
+        <Doctor>Dr. Johnson</Doctor>
+		<Imagen Imagen="nervio.jpg"/>
+    </paciente>
+</Pacientes>
