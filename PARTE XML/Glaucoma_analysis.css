@@ -1,3 +1,5 @@
+/* Glaucoma_analysis.css */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
@@ -13,7 +15,7 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
     font-size: 16px;
-    text-align: left;
+    text-align: center; /* Añadido para centrar el texto */
     border: 2px solid black;
     border-bottom-color: #add8e6; /* Cambiado a un tono azul claro */
 }

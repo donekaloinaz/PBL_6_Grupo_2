@@ -1,81 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="Glaucoma_analysis.xslt"?>
-<Pacientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Glaucoma_analysis.xsd">
-    <paciente>
-        <Nombre>Juan</Nombre>
-        <Apellido>Perez</Apellido>
-        <Id>1234ABDC</Id>
-        <Mobile_phone>635319057</Mobile_phone>
-        <Email>jperez@mondragon.edu</Email>
-        <Doctor>Dr. Smith</Doctor>
-        <Fecha_de_diagnostico>01/05/2023</Fecha_de_diagnostico>
-        <Estado_de_glaucoma>Leve</Estado_de_glaucoma>
-        <Imagen Imagen="nervio.jpg"/>
-    </paciente>
-    <paciente>
-        <Nombre>Ana</Nombre>
-        <Apellido>Gomez</Apellido>
-        <Id>67890</Id>
-        <Mobile_phone>635338957</Mobile_phone>
-        <Email>agomez@mondragon.edu</Email>
-        <Doctor>Dr. Johnson</Doctor>
-        <Fecha_de_diagnostico>15/02/2023</Fecha_de_diagnostico>
-        <Estado_de_glaucoma>Moderado</Estado_de_glaucoma>
-        <Imagen Imagen="nervio.jpg"/>
-    </paciente>
-    <paciente>
-        <Nombre>Juan</Nombre>
-        <Apellido>Martin</Apellido>
-        <Id>1234ABDC</Id>
-        <Mobile_phone>638979057</Mobile_phone>
-        <Email>jmartin@mondragon.edu</Email>
-        <Doctor>Dr. Johnson</Doctor>
-        <Fecha_de_diagnostico>20/03/2023</Fecha_de_diagnostico>
-        <Estado_de_glaucoma>Severo</Estado_de_glaucoma>
-        <Imagen Imagen="nervio.jpg"/>
-    </paciente>
-    <paciente>
-        <Nombre>Pablo</Nombre>
-        <Apellido>Lopez</Apellido>
-        <Id>1234ABDC</Id>
-        <Mobile_phone>635975057</Mobile_phone>
-        <Email>plopez@mondragon.edu</Email>
-        <Doctor>Dr. Johnson</Doctor>
-        <Fecha_de_diagnostico>10/02/2023</Fecha_de_diagnostico>
-        <Estado_de_glaucoma>Leve</Estado_de_glaucoma>
-        <Imagen Imagen="nervio.jpg"/>
-    </paciente>
-    <paciente>
-        <Nombre>Tomas</Nombre>
-        <Apellido>Gomez</Apellido>
-        <Id>1234ABDC</Id>
-        <Mobile_phone>635789057</Mobile_phone>
-        <Email>tgomez@mondragon.edu</Email>
-        <Doctor>Dr. Johnson</Doctor>
-        <Fecha_de_diagnostico>30/01/2023</Fecha_de_diagnostico>
-        <Estado_de_glaucoma>Moderado</Estado_de_glaucoma>
-        <Imagen Imagen="nervio.jpg"/>
-    </paciente>
-    <paciente>
-        <Nombre>Laura</Nombre>
-        <Apellido>Sanchez</Apellido>
-        <Id>5678EFGH</Id>
-        <Mobile_phone>635123456</Mobile_phone>
-        <Email>lsanchez@mondragon.edu</Email>
-        <Doctor>Dr. Smith</Doctor>
-        <Fecha_de_diagnostico>25/06/2023</Fecha_de_diagnostico>
-        <Estado_de_glaucoma>Leve</Estado_de_glaucoma>
-        <Imagen Imagen="nervio.jpg"/>
-    </paciente>
-    <paciente>
-        <Nombre>Pedro</Nombre>
-        <Apellido>Garcia</Apellido>
-        <Id>9101IJKL</Id>
-        <Mobile_phone>635654321</Mobile_phone>
-        <Email>pgarcia@mondragon.edu</Email>
-        <Doctor>Dr. Johnson</Doctor>
-        <Fecha_de_diagnostico>10/07/2023</Fecha_de_diagnostico>
-        <Estado_de_glaucoma>Severo</Estado_de_glaucoma>
-        <Imagen Imagen="nervio.jpg"/>
-    </paciente>
+		<Pacientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Glaucoma_analysis.xsd">
+			<!-- Pacientes existentes -->
+			<paciente>
+    <Id>87654321B</Id>
+    <Hospital>Hospital General Universitario Gregorio Marañón</Hospital>
+    <Doctor>Dr. Martínez</Doctor>
+	<Doctor_ID>34567890D</Doctor_ID>
+    <Historial_medico>Paciente sin antecedentes familiares de glaucoma. Ha experimentado episodios de visión borrosa en los últimos meses. Exámenes oftalmológicos revelan signos de neuropatía óptica. Se recomienda tratamiento con gotas para reducir la presión intraocular.</Historial_medico>  
+    <Fecha_de_diagnostico>15/06/2023</Fecha_de_diagnostico>
+    <Estado_de_glaucoma>Moderado</Estado_de_glaucoma>
+    <Imagen Imagen="nervio.jpg"/>
+</paciente>
+
+<paciente>
+    <Id>56789012C</Id>
+    <Hospital>Hospital Clínic de Barcelona</Hospital>
+    <Doctor>Dra. García</Doctor>
+	<Doctor_ID>34500890D</Doctor_ID>
+    <Historial_medico>Paciente con antecedentes familiares de glaucoma. Ha experimentado disminución gradual de la visión en el ojo izquierdo. Los exámenes oftalmológicos confirman daño en el nervio óptico. Se inicia tratamiento con medicamentos tópicos y se programa seguimiento regular.</Historial_medico>  
+    <Fecha_de_diagnostico>20/07/2023</Fecha_de_diagnostico>
+    <Estado_de_glaucoma>Severo</Estado_de_glaucoma>
+    <Imagen Imagen="nervio.jpg"/>
+</paciente>
+
+<paciente>
+    <Id>34567890D</Id>
+    <Hospital>Hospital Virgen del Rocío</Hospital>
+    <Doctor>Dr. López</Doctor>
+	<Doctor_ID>34500890D</Doctor_ID>
+    <Historial_medico>Paciente con diagnóstico previo de glaucoma. Ha experimentado episodios de dolor ocular y visión borrosa. La exploración oftalmológica revela progresión del daño en el nervio óptico. Se ajusta el tratamiento médico y se considera la posibilidad de intervención quirúrgica.</Historial_medico>  
+    <Fecha_de_diagnostico>05/09/2023</Fecha_de_diagnostico>
+    <Estado_de_glaucoma>Leve</Estado_de_glaucoma>
+    <Imagen Imagen="nervio.jpg"/>
+</paciente>
+
+<paciente>
+    <Id>90123456E</Id>
+    <Hospital>Complejo Hospitalario de Navarra</Hospital>
+    <Doctor>Dra. Fernández</Doctor>
+	<Doctor_ID>34512590D</Doctor_ID>
+    <Historial_medico>Paciente joven sin antecedentes oculares relevantes. Acude a consulta por episodios recurrentes de dolor ocular y visión borrosa. Los exámenes oftalmológicos revelan aumento de la presión intraocular y cambios en el nervio óptico. Se inicia tratamiento médico y se planifica seguimiento periódico.</Historial_medico>  
+    <Fecha_de_diagnostico>10/10/2023</Fecha_de_diagnostico>
+    <Estado_de_glaucoma>Moderado</Estado_de_glaucoma>
+    <Imagen Imagen="nervio.jpg"/>
+</paciente>
+
+<paciente>
+    <Id>23456789F</Id>
+    <Hospital>Hospital Regional Universitario de Málaga</Hospital>
+    <Doctor>Dr. Rodríguez</Doctor>
+	<Doctor_ID>34512590D</Doctor_ID>
+    <Historial_medico>Paciente con diagnóstico de glaucoma avanzado. Ha experimentado pérdida significativa de la visión en el ojo derecho. Los exámenes oftalmológicos confirman daño grave en el nervio óptico. Se discuten opciones de tratamiento, incluida la cirugía de filtración.</Historial_medico>  
+    <Fecha_de_diagnostico>25/11/2023</Fecha_de_diagnostico>
+    <Estado_de_glaucoma>Severo</Estado_de_glaucoma>
+    <Imagen Imagen="nervio.jpg"/>
+</paciente>
+<paciente>
+    <Id>87654321B</Id>
+    <Hospital>Hospital General Universitario Gregorio Marañón</Hospital>
+    <Doctor>Dr. Martínez</Doctor>
+	<Doctor_ID>34125590D</Doctor_ID>
+    <Historial_medico>Paciente sin antecedentes familiares de glaucoma. Ha experimentado episodios de visión borrosa en los últimos meses. Exámenes oftalmológicos revelan signos de neuropatía óptica. Se recomienda tratamiento con gotas para reducir la presión intraocular.</Historial_medico>  
+    <Fecha_de_diagnostico>15/06/2023</Fecha_de_diagnostico>
+    <Estado_de_glaucoma>Moderado</Estado_de_glaucoma>
+    <Imagen Imagen="nervio.jpg"/>
+</paciente>
+
+<paciente>
+    <Id>56789012C</Id>
+    <Hospital>Hospital Clínic de Barcelona</Hospital>
+    <Doctor>Dra. García</Doctor>
+	<Doctor_ID>34512559D</Doctor_ID>
+    <Historial_medico>Paciente con antecedentes familiares de glaucoma. Ha experimentado disminución gradual de la visión en el ojo izquierdo. Los exámenes oftalmológicos confirman daño en el nervio óptico. Se inicia tratamiento con medicamentos tópicos y se programa seguimiento regular.</Historial_medico>  
+    <Fecha_de_diagnostico>20/07/2023</Fecha_de_diagnostico>
+    <Estado_de_glaucoma>Severo</Estado_de_glaucoma>
+    <Imagen Imagen="nervio.jpg"/>
+</paciente>
+
+<paciente>
+    <Id>34567860D</Id>
+    <Hospital>Hospital Virgen del Rocío</Hospital>
+    <Doctor>Dr. López</Doctor>
+	<Doctor_ID>34515590D</Doctor_ID>
+    <Historial_medico>Paciente con diagnóstico previo de glaucoma. Ha experimentado episodios de dolor ocular y visión borrosa. La exploración oftalmológica revela progresión del daño en el nervio óptico. Se ajusta el tratamiento médico y se considera la posibilidad de intervención quirúrgica.</Historial_medico>  
+    <Fecha_de_diagnostico>05/09/2023</Fecha_de_diagnostico>
+    <Estado_de_glaucoma>Leve</Estado_de_glaucoma>
+    <Imagen Imagen="nervio.jpg"/>
+</paciente>
+
+<paciente>
+    <Id>90123456E</Id>
+    <Hospital>Complejo Hospitalario de Navarra</Hospital>
+    <Doctor>Dra. Fernández</Doctor>
+	<Doctor_ID>34525590D</Doctor_ID>
+    <Historial_medico>Paciente joven sin antecedentes oculares relevantes. Acude a consulta por episodios recurrentes de dolor ocular y visión borrosa. Los exámenes oftalmológicos revelan aumento de la presión intraocular y cambios en el nervio óptico. Se inicia tratamiento médico y se planifica seguimiento periódico.</Historial_medico>  
+    <Fecha_de_diagnostico>10/10/2023</Fecha_de_diagnostico>
+    <Estado_de_glaucoma>Moderado</Estado_de_glaucoma>
+    <Imagen Imagen="nervio.jpg"/>
+</paciente>
+
+<paciente>
+    <Id>23456789F</Id>
+    <Hospital>Hospital Regional Universitario de Málaga</Hospital>
+    <Doctor>Dr. Rodríguez</Doctor>
+	<Doctor_ID>34125590D</Doctor_ID>
+    <Historial_medico>Paciente con diagnóstico de glaucoma avanzado. Ha experimentado pérdida significativa de la visión en el ojo derecho. Los exámenes oftalmológicos confirman daño grave en el nervio óptico. Se discuten opciones de tratamiento, incluida la cirugía de filtración.</Historial_medico>  
+    <Fecha_de_diagnostico>25/11/2023</Fecha_de_diagnostico>
+    <Estado_de_glaucoma>Severo</Estado_de_glaucoma>
+    <Imagen Imagen="nervio.jpg"/>
+</paciente>
+
+
 </Pacientes>
+
+
