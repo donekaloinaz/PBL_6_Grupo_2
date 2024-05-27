@@ -93,7 +93,7 @@ ens_mdl = fitcensemble(X_train,Y_train,'Learners','tree','OptimizeHyperparameter
 figure
 cm_ens = confusionchart(Y_test,ens_predict,'RowSummary','row-normalized');
 cm_vals_ens = cm_ens.NormalizedValues;
-acc_ens = cm_vals_ens(1,1)+cm_vals_ens(2,2))/(cm_vals_ens(1,1)+cm_vals_ens(2,2)+cm_vals_ens(1,2)+cm_vals_ens(2,1);
+acc_ens = (cm_vals_ens(1,1)+cm_vals_ens(2,2))/(cm_vals_ens(1,1)+cm_vals_ens(2,2)+cm_vals_ens(1,2)+cm_vals_ens(2,1));
 sen_ens = cm_vals_ens(1,1)/(cm_vals_ens(1,1)+cm_vals_ens(2,1));
 spe_ens = cm_vals_ens(2,2)/(cm_vals_ens(2,2)+cm_vals_ens(1,2));
 precis_ens = cm_vals_ens(1,1)/(cm_vals_ens(1,1)+cm_vals_ens(1,2));

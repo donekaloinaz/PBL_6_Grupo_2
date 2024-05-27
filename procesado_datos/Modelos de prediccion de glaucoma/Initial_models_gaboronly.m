@@ -97,7 +97,7 @@ acc_ens = (cm_vals_ens(1,1)+cm_vals_ens(2,2))/(cm_vals_ens(1,1)+cm_vals_ens(2,2)
 sen_ens = cm_vals_ens(1,1)/(cm_vals_ens(1,1)+cm_vals_ens(2,1));
 spe_ens = cm_vals_ens(2,2)/(cm_vals_ens(2,2)+cm_vals_ens(1,2));
 precis_ens = cm_vals_ens(1,1)/(cm_vals_ens(1,1)+cm_vals_ens(1,2));
-[~, ~, ~, auc_ens_test] = perfcurve(Y_test, ens_scores(:,1), 0);
+[~, ~, ~, auc_ens] = perfcurve(Y_test, ens_scores(:,1), 0);
 results = [results; table("TreeENS", acc_ens, sen_ens, spe_ens, precis_ens, auc_ens, 'VariableNames',{'model','accuracy','sensitivity','specificity','precision','AUC'})];
 %%
 results
