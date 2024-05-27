@@ -73,6 +73,18 @@ precis_tree_final_test = cmvals_tree_final(1,1)/(cmvals_tree_final(1,1)+cmvals_t
 [~, ~, ~, auc_tree_final_test] = perfcurve(Y_test, tree_final_scores(:,1), 0);
 imptree = predictorImportance(tree_mdl_opt);
 results = [results; table("Tree", acc_tree_final_test, sen_tree_final_test, spe_tree_final_test, precis_tree_final_test, auc_tree_final_test, 'VariableNames',{'model','accuracy','sensitivity','specificity','precision','AUC'})];
+%% Random Forest
+rf_mdl = fitcensemble(X_train,Y_train,'Method','Bag','Learners','tree');
+[Y_rf_pred, rf_scores] = predict(rf_mdl,X_test);
+figure('Name','Random Forest Confusion Chart');
+cm_rf = confusionchart(Y_test,Y_rf_pred,'RowSummary','row-normalized');
+cm_vals_rf = cm_rf.NormalizedValues;
+sen_rf = cm_vals_rf(1,1)/(cm_vals_rf(1,1)+cm_vals_rf(2,1));
+spe_rf = cm_vals_rf(2,2)/(cm_vals_rf(2,2)+cm_vals_rf(1,2));
+precis_rf = cm_vals_rf(1,1)/(cm_vals_rf(1,1)+cm_vals_rf(1,2));
+acc_rf = (cm_vals_rf(1,1)+cm_vals_rf(2,2))/(cm_vals_rf(1,1)+cm_vals_rf(2,2)+cm_vals_rf(1,2)+cm_vals_rf(2,1));
+[~, ~, ~, auc_rf] = perfcurve(Y_test, rf_scores(:,1), 0);
+results = [results; table("RF", acc_rf, sen_rf, spe_rf, precis_rf, auc_rf, 'VariableNames',{'model','accuracy','sensitivity','specificity','precision','AUC'})];
 %% Naive Bayes
 nb_mdl = fitcnb(X_train,Y_train,'OptimizeHyperparameters','all', ...
     'HyperparameterOptimizationOptions',opt);
@@ -90,14 +102,14 @@ results = [results; table("NB", acc_nb, sen_nb, spe_nb, precis_nb, auc_nb, 'Vari
 ens_mdl = fitcensemble(X_train,Y_train,'Learners','tree','OptimizeHyperparameters','all', ...
     'HyperparameterOptimizationOptions',opt);
 [ens_predict, ens_scores] = predict(ens_mdl,X_test);
-figure
+figure('Name','Optimized Tree Ensembles Confusion Chart')
 cm_ens = confusionchart(Y_test,ens_predict,'RowSummary','row-normalized');
 cm_vals_ens = cm_ens.NormalizedValues;
 acc_ens = (cm_vals_ens(1,1)+cm_vals_ens(2,2))/(cm_vals_ens(1,1)+cm_vals_ens(2,2)+cm_vals_ens(1,2)+cm_vals_ens(2,1));
 sen_ens = cm_vals_ens(1,1)/(cm_vals_ens(1,1)+cm_vals_ens(2,1));
 spe_ens = cm_vals_ens(2,2)/(cm_vals_ens(2,2)+cm_vals_ens(1,2));
 precis_ens = cm_vals_ens(1,1)/(cm_vals_ens(1,1)+cm_vals_ens(1,2));
-[~, ~, ~, auc_ens_test] = perfcurve(Y_test, ens_scores(:,1), 0);
+[~, ~, ~, auc_ens] = perfcurve(Y_test, ens_scores(:,1), 0);
 results = [results; table("TreeENS", acc_ens, sen_ens, spe_ens, precis_ens, auc_ens, 'VariableNames',{'model','accuracy','sensitivity','specificity','precision','AUC'})];
 %%
 results
