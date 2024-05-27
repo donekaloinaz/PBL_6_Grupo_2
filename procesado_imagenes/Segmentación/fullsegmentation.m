@@ -1,5 +1,5 @@
-function [bwselected,cropped_image_novessels,cropcentre,Crop_Vessels_Removed,disclogical,cuplogical,cupdiscmask,cupdiscmaskcorrected,ISNTadequate] = fullsegmentation(I)
-[~, ~, bwselected, ~, cropped_image_novessels, ~, origcentre, ~] = Bit_plane_slicing_segmentation(I);
+function [bwselected,cropped_image_wvessels,cropcentre,Crop_Vessels_Removed,disclogical,cuplogical,cupdiscmask,cupdiscmaskcorrected,ISNTadequate] = fullsegmentation(I)
+[~, ~, bwselected, ~, cropped_image_novessels, cropped_image_wvessels, origcentre, ~] = Bit_plane_slicing_segmentation(I);
 Crop_Vessels_Removed = RemoveVessels(cropped_image_novessels);
 disclogical = crop_image(origcentre,bwselected,bwselected);
 centre = regionprops(disclogical,'Centroid');
