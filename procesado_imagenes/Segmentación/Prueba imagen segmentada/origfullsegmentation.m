@@ -1,4 +1,4 @@
-function [bwselected,cropped_image_wvessels,cropcentre,Crop_Vessels_Removed,disclogical,cuplogical,cupdiscmask,cupdiscmaskcorrected,ISNTadequate,seggreen] = fullsegmentation(I)
+function [bwselected,cropped_image_wvessels,cropcentre,Crop_Vessels_Removed,disclogical,cuplogical,cupdiscmask,cupdiscmaskcorrected,ISNTadequate,seggreen] = origfullsegmentation(I)
 [~, ~, bwselected, ~, cropped_image_novessels, cropped_image_wvessels, origcentre, seggreen] = Bit_plane_slicing_segmentation(I);
 Crop_Vessels_Removed = RemoveVessels(cropped_image_novessels);
 disclogical = crop_image(origcentre,bwselected,bwselected);
