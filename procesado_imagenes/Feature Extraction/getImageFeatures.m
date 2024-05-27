@@ -32,4 +32,5 @@ for i = 1:length(imlimpiaspredict)
     savename = strcat("featuresfila",num2str(i),".mat");
     save(savename,"featurerow","croppedim","disclogical","cuplogical","cupdiscmask","cupdiscmaskcorrected");
 end
+features = catpredicted(features);
 save("image_features.mat","features");
