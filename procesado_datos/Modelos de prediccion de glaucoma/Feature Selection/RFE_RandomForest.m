@@ -1,4 +1,4 @@
-clear; close all; clc;
+clear; warning('off','all');
 load image_features.mat
 rng("default")
 %% Z-socre variables
@@ -16,7 +16,7 @@ to_keep = sequentialfs(fun, X_train, Y_train,'Direction','backward');
 %% Build final model
 bestmdl = fitmnr(X_train(:,to_keep),Y_train);
 [Y_ens_pred, ens_scores] = predict(bestmdl,X_test(:,to_keep));
-figure('Name','Initial test ENS Confusion Chart')
+figure('Name','RFE Random Forest Confusion Chart')
 cm_ens = confusionchart(Y_test, Y_ens_pred, 'RowSummary','row-normalized');
 cmvals_ens = cm_ens.NormalizedValues;
 acc_ens_inital = (cmvals_ens(1,1)+cmvals_ens(2,2))/(cmvals_ens(1,1)+cmvals_ens(2,2)+cmvals_ens(1,2)+cmvals_ens(2,1));
