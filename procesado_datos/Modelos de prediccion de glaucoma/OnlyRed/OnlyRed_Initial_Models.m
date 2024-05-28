@@ -1,11 +1,11 @@
 clear; close all; clc;
-load image_features.mat
+load onlyredfeatures.mat
 rng("default")
 %% Z-socre variables
-features = getzscorefeatures(features);
+onlyredfeatures = getzscorefeatures(onlyredfeatures);
 %% Data partition
-Y = features{:,end};
-X = features{:,1:end-1};
+Y = onlyredfeatures{:,end};
+X = onlyredfeatures{:,1:5};
 cv = cvpartition(Y, 'HoldOut', 0.2, 'Stratify', true);
 X_train = X(cv.training, :);
 X_test  = X(cv.test, :);
