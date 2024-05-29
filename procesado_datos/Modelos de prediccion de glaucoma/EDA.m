@@ -12,6 +12,10 @@ corrmap = corrcoef(X);
 imagesc(corrmap);
 colormap("hot")
 %% 
+corrglc = corrmap(:,end);
+[sorted,order] = sort(corrglc);
+varstotry = order(end-6:end-1);
+%% 
 for i = 1:width(features)-1
     corrs(i) = corr(X(:,i),Y);
 end
