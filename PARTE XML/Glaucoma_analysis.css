@@ -1,11 +1,24 @@
-/* Glaucoma_analysis.css */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
 h1 {
+    margin: 0;
+	font-size: 40px;
+    flex-grow: 1;
     text-align: center;
     color: #007bff;
 }
@@ -14,15 +27,16 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    font-size: 16px;
-    text-align: center; /* Añadido para centrar el texto */
+    font-size: 17px;
+    text-align: left;
     border: 2px solid black;
-    border-bottom-color: #add8e6; /* Cambiado a un tono azul claro */
+    border-bottom-color: #add8e6;
 }
 
 th, td {
     padding: 12px;
     border: 1px solid black;
+    text-align: center;
 }
 
 th {
@@ -41,4 +55,11 @@ tr:hover {
 img {
     width: 100px;
     height: auto;
+}
+
+.doctor-img {
+    width: 50px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }

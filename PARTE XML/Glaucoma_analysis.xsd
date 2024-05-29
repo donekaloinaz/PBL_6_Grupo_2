@@ -13,8 +13,8 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="Hospital" type="xs:string" />
-                            <xs:element name="Doctor" type="xs:string" />
+                            <xs:element name="Hospital" type="xs:string"/>
+                            <xs:element name="Doctor" type="xs:string"/>
                             <xs:element name="Doctor_ID">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -22,7 +22,12 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="Historial_medico" type="xs:string" />
+                            <xs:element name="Doctor_Imagen">
+                                <xs:complexType>
+                                    <xs:attribute name="Imagen" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Historial_medico" type="xs:string"/>
                             <xs:element name="Fecha_de_diagnostico">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -30,7 +35,7 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="Estado_de_glaucoma" type="xs:string" />
+                            <xs:element name="Estado_de_glaucoma" type="xs:string"/>
                             <xs:element name="Imagen">
                                 <xs:complexType>
                                     <xs:attribute name="Imagen" type="xs:string" use="required"/>
