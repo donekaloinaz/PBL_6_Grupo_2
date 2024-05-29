@@ -14,12 +14,12 @@ function [bwselected,centre] = selectseg(bw)
     L=0;
     x = 1;
     for j = 1:height(dotareanorm)
-        if dotareanorm(j) < 0.5
+        if dotareanorm(j) < 0.1
             L(x) = j;
             x = x+1;
         end
     end
-    dotareanorm(dotareanorm<0.5) = [];
+    dotareanorm(dotareanorm<0.1) = [];
     if L~=0
         dotarea(L) = [];
         dotper(L) = [];
