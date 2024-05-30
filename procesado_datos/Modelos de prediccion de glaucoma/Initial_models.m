@@ -5,7 +5,7 @@ rng("default")
 features = getzscorefeatures(features);
 %% Data partition
 Y = features{:,end};
-X = features{:,1:end-1};
+X = features{:,1:5};
 cv = cvpartition(Y, 'HoldOut', 0.2, 'Stratify', true);
 X_train = X(cv.training, :);
 X_test  = X(cv.test, :);

@@ -1,7 +1,7 @@
 clear; close all; clc;
 load image_features.mat; 
 Y = features{:,end};
-X = features{:,1:end-1};
+X = features{:,1:end-1;
 cv = cvpartition(Y, 'HoldOut', 0.2, 'Stratify', true);
 X_train = X(cv.training, :);
 X_test  = X(cv.test, :);

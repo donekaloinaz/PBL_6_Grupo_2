@@ -10,7 +10,7 @@ newt = positive;
 newt(end+1:end+height(positive),:) = negative(1:height(positive),:);
 %% Data partition
 Y = newt{:,end};
-X = newt{:,35:end-1};
+X = newt{:,[80,81,85,86,87,91]};
 cv = cvpartition(Y, 'HoldOut', 0.2, 'Stratify', true);
 X_train = X(cv.training, :);
 X_test  = X(cv.test, :);
@@ -128,4 +128,3 @@ fprintf('The best sensitivity was obtained by the %s model with a value of %.4f\
 fprintf('The best specificity was obtained by the %s model with a value of %.4f\n', results.model(spe_idx),max_spe)
 fprintf('The best precision was obtained by the %s model with a value of %.4f\n', results.model(pre_idx),max_pre)
 fprintf('The best AUC was obtaiend by the %s model with a value of %.4f\n', results.model(AUC_idx), max_AUC)
-save("OnlyRedEqualPartitionGaborFeaturesResults.mat","results");

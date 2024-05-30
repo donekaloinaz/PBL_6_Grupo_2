@@ -16,6 +16,21 @@ figure;
 imagesc(coeff); colormap;
 idx = find(cumsum(explained)>95,1);
 trainscore = score(:,1:idx);
+
+%% PCA plot
+figure; hold on;
+scatter(score(Y_train==0, 1), score(Y_train==0, 2));
+scatter(score(Y_train==1, 1), score(Y_train==1, 2));
+xlabel('PCA 1')
+ylabel('PCA 2')
+
+%% t-SNE
+C= tsne(X_train);
+figure; hold on;
+scatter(C(Y_train==0, 1), C(Y_train==0, 2));
+scatter(C(Y_train==1, 1), C(Y_train==1, 2));
+xlabel('t-SNE 1')
+ylabel('t-SNE 2')
 %% Train random forest
 rf_mdl = fitcensemble(trainscore,Y_train,'Method','Bag','Learners','tree');
 testscore = (X_test-mu)*coeff(:,1:idx);
