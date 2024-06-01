@@ -18,17 +18,17 @@ idx = find(cumsum(explained)>95,1);
 trainscore = score(:,1:idx);
 
 %% PCA plot
-figure; hold on;
-scatter(score(Y_train==0, 1), score(Y_train==0, 2));
-scatter(score(Y_train==1, 1), score(Y_train==1, 2));
+figure; subplot(121); hold on; title('Análisis PCA','FontSize',20);
+scatter(score(Y_train==0, 1), score(Y_train==0, 2)); legend('Glaucoma negativo');
+scatter(score(Y_train==1, 1), score(Y_train==1, 2)); lgd = legend('Glaucoma positivo','Glaucoma negativo'); fontsize(lgd,12,'points');
 xlabel('PCA 1')
 ylabel('PCA 2')
 
 %% t-SNE
 C= tsne(X_train);
-figure; hold on;
-scatter(C(Y_train==0, 1), C(Y_train==0, 2));
-scatter(C(Y_train==1, 1), C(Y_train==1, 2));
+subplot(122); hold on; title('Análisis t-SNE','FontSize',20);
+scatter(C(Y_train==0, 1), C(Y_train==0, 2)); legend('Glaucoma negativo');
+scatter(C(Y_train==1, 1), C(Y_train==1, 2)); lgd = legend('Glaucoma positivo','Glaucoma negativo'); fontsize(lgd,12,'points');
 xlabel('t-SNE 1')
 ylabel('t-SNE 2')
 %% Train random forest
