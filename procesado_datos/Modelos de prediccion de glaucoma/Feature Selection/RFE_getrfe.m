@@ -18,17 +18,17 @@ X_test  = X(cv.test, :);
 Y_train = Y(cv.training);
 Y_test  = Y(cv.test);
 %% Entrena
-[bestmdl,varidx,~] = getrfe('ENS',X_train,Y_train);
+[bestmdl,varidx,~] = getrfe('SVM',X_train,Y_train);
 %% Test
-[Y_knn_pred, knn_scores] = predict(bestmdl, X_test(:,varidx));
-figure('Name','Optimized ENSTrees Confusion Chart')
-cm_knn = confusionchart(Y_test, Y_knn_pred, 'RowSummary','row-normalized');
-cmvals_knn = cm_knn.NormalizedValues;
-acc_knn_best = (cmvals_knn(1,1)+cmvals_knn(2,2))/(cmvals_knn(1,1)+cmvals_knn(2,2)+cmvals_knn(1,2)+cmvals_knn(2,1));
-sen_knn_best = cmvals_knn(1,1)/(cmvals_knn(1,1)+cmvals_knn(2,1));
-spe_knn_best = cmvals_knn(2,2)/(cmvals_knn(2,2)+cmvals_knn(1,2));
-precis_knn_best = cmvals_knn(1,1)/(cmvals_knn(1,1)+cmvals_knn(1,2));
-[~, ~, ~, auc_knn_best] = perfcurve(Y_test, knn_scores(:,1), 0);
+[Y_pred, scores] = predict(bestmdl, X_test(:,varidx));
+figure('Name','Optimized SVM Confusion Chart')
+cm = confusionchart(Y_test, Y_pred, 'RowSummary','row-normalized');
+cmvals = cm.NormalizedValues;
+acc = (cmvals(1,1)+cmvals(2,2))/(cmvals(1,1)+cmvals(2,2)+cmvals(1,2)+cmvals(2,1));
+sen = cmvals(1,1)/(cmvals(1,1)+cmvals(2,1));
+spe = cmvals(2,2)/(cmvals(2,2)+cmvals(1,2));
+precis = cmvals(1,1)/(cmvals(1,1)+cmvals(1,2));
+[~, ~, ~, auc] = perfcurve(Y_test, scores(:,1), 0);
 %% Print
 variablenames = variablenames(2:end);
 variables = getvariablenames(varidx,variablenames);
@@ -37,8 +37,8 @@ fprintf(['Best model got an AUC of %.4f with the next variables: {%s}\n' ...
     'Accuracy: %.4f\n' ...
     'Sensitivity: %.4f\n' ...
     'Specificity: %.4f\n' ...
-    'Precision: %.4f\n'],auc_knn_best,variables,acc_knn_best,sen_knn_best,spe_knn_best,precis_knn_best)
-save('RFE_ENSTrees_model','bestmdl','varidx');
+    'Precision: %.4f\n'],auc,variables,acc,sen,spe,precis)
+save('RFE_SVM_model','bestmdl','varidx');
 %% 
 function variables = getvariablenames(varidx,variablenames)
 variables = string(variablenames{1});
