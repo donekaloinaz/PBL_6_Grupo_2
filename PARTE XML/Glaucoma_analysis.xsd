@@ -5,14 +5,7 @@
             <xs:sequence>
                 <xs:element name="paciente" maxOccurs="unbounded">
                     <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Id">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:pattern value="\d{8}[A-Za-z]"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
+                        <xs:sequence>                          
                             <xs:element name="Hospital" type="xs:string"/>
                             <xs:element name="Doctor" type="xs:string"/>
                             <xs:element name="Doctor_ID">
@@ -35,13 +28,29 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-                            <xs:element name="Estado_de_glaucoma" type="xs:string"/>
-                            <xs:element name="Imagen">
+                            <xs:element name="Parametros_Glaucoma">
                                 <xs:complexType>
-                                    <xs:attribute name="Imagen" type="xs:string" use="required"/>
+                                    <xs:sequence>
+                                        <xs:element name="Tipo_de_Glaucoma" type="xs:string"/>
+                                        <xs:element name="Estado" type="xs:string"/>
+                                        <xs:element name="Regla_ISNT" type="xs:string"/>
+                                        <xs:element name="Relación_Copa-Disco" type="xs:string"/>
+                                        <xs:element name="Imagen">
+                                            <xs:complexType>
+                                                <xs:attribute name="Imagen" type="xs:string" use="required"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
+                        <xs:attribute name="ID">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value="\d{8}[A-Za-z]"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>        
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
