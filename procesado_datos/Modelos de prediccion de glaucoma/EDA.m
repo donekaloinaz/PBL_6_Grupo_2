@@ -9,8 +9,19 @@ Y_train = Y(cv.training);
 Y_test  = Y(cv.test);
 %% 
 corrmap = corrcoef(X);
-imagesc(corrmap);
+ticks = {'Segmentación','Wavelet','Gabor','Glaucoma'};
+figure
+imagesc(corrmap); title('Matriz de correlación');
+xticks([3,22,60,91])
+xticklabels(ticks)
+xtickangle(30)
+yticks([3,22,60,91])
+yticklabels(ticks)
 colormap("hot")
+%% 
+corrglc = corrmap(:,end);
+[sorted,order] = sort(corrglc);
+varstotry = order(end-6:end-1);
 %% 
 for i = 1:width(features)-1
     corrs(i) = corr(X(:,i),Y);

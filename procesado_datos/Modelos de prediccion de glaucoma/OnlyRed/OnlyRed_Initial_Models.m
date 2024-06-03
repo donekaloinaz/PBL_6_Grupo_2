@@ -5,7 +5,7 @@ rng("default")
 onlyredfeatures = getzscorefeatures(onlyredfeatures);
 %% Data partition
 Y = onlyredfeatures{:,end};
-X = onlyredfeatures{:,1:5};
+X = onlyredfeatures{:,1:end-1};
 cv = cvpartition(Y, 'HoldOut', 0.2, 'Stratify', true);
 X_train = X(cv.training, :);
 X_test  = X(cv.test, :);
@@ -28,7 +28,7 @@ results = table;
 results = [results; table("MNR", acc_mnr_test, sen_mnr_test, spe_mnr_test, precis_mnr_test, auc_mnr_test, 'VariableNames',{'model','accuracy','sensitivity','specificity','precision','AUC'})];
 
 %% K-nearest Neighbors Model
-cv_in = cvpartition(Y_train,"KFold",10);
+cv_in = cvpartition(Y_train,"KFold",10,"Stratify",true);
 opt.CVPartition = cv_in;
 opt.Verbose = 0;
 opt.ShowPlots = false;

@@ -1,11 +1,16 @@
 clear; close all; clc;
-load image_features.mat
+load onlyredfeatures.mat
 rng("default")
 %% Z-socre variables
-features = getzscorefeatures(features);
+onlyredfeatures = getzscorefeatures(onlyredfeatures);
+%% Equal Partition
+positive = onlyredfeatures(onlyredfeatures.Glaucoma==1,:);
+negative = onlyredfeatures(onlyredfeatures.Glaucoma==0,:);
+newt = positive;
+newt(end+1:end+height(positive),:) = negative(1:height(positive),:);
 %% Data partition
-Y = features{:,end};
-X = features{:,1:5};
+Y = newt{:,end};
+X = newt{:,[80,81,85,86,87,91]};
 cv = cvpartition(Y, 'HoldOut', 0.2, 'Stratify', true);
 X_train = X(cv.training, :);
 X_test  = X(cv.test, :);
@@ -26,8 +31,9 @@ precis_mnr_test = cmvals_mnr(1,1)/(cmvals_mnr(1,1)+cmvals_mnr(1,2));
 [~, ~, ~, auc_mnr_test] = perfcurve(Y_test, mnr_scores(:,1), 0);
 results = table;
 results = [results; table("MNR", acc_mnr_test, sen_mnr_test, spe_mnr_test, precis_mnr_test, auc_mnr_test, 'VariableNames',{'model','accuracy','sensitivity','specificity','precision','AUC'})];
+
 %% K-nearest Neighbors Model
-cv_in = cvpartition(Y_train,"KFold",10,'Stratify',true);
+cv_in = cvpartition(Y_train,"KFold",10,"Stratify",true);
 opt.CVPartition = cv_in;
 opt.Verbose = 0;
 opt.ShowPlots = false;
@@ -43,6 +49,7 @@ spe_knn_final_test = cmvals_knn_final(2,2)/(cmvals_knn_final(2,2)+cmvals_knn_fin
 precis_knn_final_test = cmvals_knn_final(1,1)/(cmvals_knn_final(1,1)+cmvals_knn_final(1,2));
 [~, ~, ~, auc_knn_final_test] = perfcurve(Y_test, knn_final_scores(:,1), 0);
 results = [results; table("KNN", acc_knn_final_test, sen_knn_final_test, spe_knn_final_test, precis_knn_final_test, auc_knn_final_test, 'VariableNames',{'model','accuracy','sensitivity','specificity','precision','AUC'})];
+
 %% Support Vector Machine
 svm_mdl_opt = fitcsvm(X_train,Y_train,'OptimizeHyperparameters','all', ...
     'HyperparameterOptimizationOptions',opt);
@@ -72,7 +79,7 @@ precis_tree_final_test = cmvals_tree_final(1,1)/(cmvals_tree_final(1,1)+cmvals_t
 imptree = predictorImportance(tree_mdl_opt);
 results = [results; table("Tree", acc_tree_final_test, sen_tree_final_test, spe_tree_final_test, precis_tree_final_test, auc_tree_final_test, 'VariableNames',{'model','accuracy','sensitivity','specificity','precision','AUC'})];
 %% Random Forest
-rf_mdl = fitcensemble(X_train,Y_train,'Method','Bag','Learners','tree','NumLearningCycles',300);
+rf_mdl = fitcensemble(X_train,Y_train,'Method','Bag','Learners','tree','NumLearningCycles',700);
 [Y_rf_pred, rf_scores] = predict(rf_mdl,X_test);
 figure('Name','Random Forest Confusion Chart');
 cm_rf = confusionchart(Y_test,Y_rf_pred,'RowSummary','row-normalized');

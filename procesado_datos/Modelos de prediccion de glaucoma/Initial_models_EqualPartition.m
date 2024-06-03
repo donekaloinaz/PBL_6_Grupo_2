@@ -3,9 +3,14 @@ load image_features.mat
 rng("default")
 %% Z-socre variables
 features = getzscorefeatures(features);
+%% Equal Partition
+positive = features(features.Glaucoma==1,:);
+negative = features(features.Glaucoma==0,:);
+newt = positive;
+newt(end+1:end+height(positive),:) = negative(1:height(positive),:);
 %% Data partition
-Y = features{:,end};
-X = features{:,1:5};
+Y = newt{:,end};
+X = newt{:,1:end-1};
 cv = cvpartition(Y, 'HoldOut', 0.2, 'Stratify', true);
 X_train = X(cv.training, :);
 X_test  = X(cv.test, :);
