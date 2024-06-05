@@ -18,10 +18,10 @@ X_test  = X(cv.test, :);
 Y_train = Y(cv.training);
 Y_test  = Y(cv.test);
 %% Entrena
-[bestmdl,varidx,~] = getrfe('SVM',X_train,Y_train);
+[bestmdl,varidx,~] = getrfe('ENSknn',X_train,Y_train);
 %% Test
 [Y_pred, scores] = predict(bestmdl, X_test(:,varidx));
-figure('Name','Optimized SVM Confusion Chart')
+figure('Name','ENSknn Confusion Chart')
 cm = confusionchart(Y_test, Y_pred, 'RowSummary','row-normalized');
 cmvals = cm.NormalizedValues;
 acc = (cmvals(1,1)+cmvals(2,2))/(cmvals(1,1)+cmvals(2,2)+cmvals(1,2)+cmvals(2,1));
@@ -38,7 +38,7 @@ fprintf(['Best model got an AUC of %.4f with the next variables: {%s}\n' ...
     'Sensitivity: %.4f\n' ...
     'Specificity: %.4f\n' ...
     'Precision: %.4f\n'],auc,variables,acc,sen,spe,precis)
-save('RFE_SVM_model','bestmdl','varidx');
+save('RFE_ENSknn_model','bestmdl','varidx');
 %% 
 function variables = getvariablenames(varidx,variablenames)
 variables = string(variablenames{1});
