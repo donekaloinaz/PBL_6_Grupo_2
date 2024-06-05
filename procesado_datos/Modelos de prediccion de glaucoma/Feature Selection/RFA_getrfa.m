@@ -22,10 +22,10 @@ X_test  = X(cv.test, :);
 Y_train = Y(cv.training);
 Y_test  = Y(cv.test);
 %% Entrena
-[bestmdl,varidx,~] = getrfa('ENS',X_train,Y_train);
+[bestmdl,varidx,~] = getrfa('ENSknn',X_train,Y_train);
 %% Test
 [Y_pred, scores] = predict(bestmdl, X_test(:,varidx));
-figure('Name','ENS Trees Confusion Chart')
+figure('Name','ENS KNN Confusion Chart')
 cm = confusionchart(Y_test, Y_pred, 'RowSummary','row-normalized');
 cmvals = cm.NormalizedValues;
 acc = (cmvals(1,1)+cmvals(2,2))/(cmvals(1,1)+cmvals(2,2)+cmvals(1,2)+cmvals(2,1));
@@ -42,7 +42,7 @@ fprintf(['Best model got an AUC of %.4f with the next variables: {%s}\n' ...
     'Sensitivity: %.4f\n' ...
     'Specificity: %.4f\n' ...
     'Precision: %.4f\n'],auc,variables,acc,sen,spe,precis)
-save('RFA_ENSTrees_model','bestmdl','varidx');
+save('RFA_ENSKNN_model','bestmdl','varidx');
 %% 
 function variables = getvariablenames(varidx,variablenames)
 variables = string(variablenames{1});
