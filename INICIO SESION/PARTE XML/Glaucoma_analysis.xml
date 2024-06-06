@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="Glaucoma_analysis.xslt"?>
+<Pacientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Glaucoma_analysis.xsd">
+    <!-- Paciente 1 -->
+    <paciente ID="12345678A">
+        <Hospital>Hospital Universitario La Paz</Hospital>
+        <Doctor>Dr. Sanchez</Doctor>
+        <Doctor_ID>01234567X</Doctor_ID>
+        <Doctor_Imagen Imagen="medico4.jpeg"/>
+        <Historial_medico>Paciente con síntomas iniciales de glaucoma, presión intraocular elevada. Tratamiento con colirios para reducir la presión ocular.</Historial_medico>
+        <Fecha_de_diagnostico>01/05/2023</Fecha_de_diagnostico>
+        <Parametros_Glaucoma>
+            <Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+			<Estado>Leve</Estado>
+            <Regla_ISNT>No</Regla_ISNT>
+            <Relación_Copa-Disco>0,2</Relación_Copa-Disco>
+            <Imagen Imagen="image_0001.jpg"/>
+        </Parametros_Glaucoma>
+    </paciente>
+    <!-- Paciente 2 -->
+    <paciente ID="23456789B">
+        <Hospital>Hospital General Universitario Gregorio Marañón</Hospital>
+        <Doctor>Dr. Martínez</Doctor>
+        <Doctor_ID>12345678C</Doctor_ID>
+        <Doctor_Imagen Imagen="medico2.jpg"/>
+        <Historial_medico>Paciente con episodios de visión borrosa y presión ocular elevada. Tratamiento con gotas oftálmicas para reducir la presión intraocular.</Historial_medico>
+        <Fecha_de_diagnostico>15/06/2023</Fecha_de_diagnostico>
+        <Parametros_Glaucoma>
+			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+            <Estado>Moderado</Estado>
+            <Regla_ISNT>No</Regla_ISNT>
+            <Relación_Copa-Disco>0,5</Relación_Copa-Disco>
+            <Imagen Imagen="image_0002.jpg"/>
+        </Parametros_Glaucoma>
+    </paciente>
+    <!-- Paciente 3 -->
+    <paciente ID="34567890C">
+        <Hospital>Hospital Clínic de Barcelona</Hospital>
+        <Doctor>Dra. García</Doctor>
+        <Doctor_ID>23456789D</Doctor_ID>
+        <Doctor_Imagen Imagen="medico1.jpg"/>
+        <Historial_medico>Paciente con antecedentes familiares de glaucoma. Signos de neuropatía óptica detectados en el examen oftalmológico.</Historial_medico>
+        <Fecha_de_diagnostico>20/07/2023</Fecha_de_diagnostico>
+        <Parametros_Glaucoma>
+			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+            <Estado>Severo</Estado>
+            <Regla_ISNT>Si</Regla_ISNT>
+            <Relación_Copa-Disco>0,4</Relación_Copa-Disco>
+            <Imagen Imagen="image_0003.jpg"/>
+        </Parametros_Glaucoma>
+    </paciente>
+    <!-- Paciente 4 -->
+    <paciente ID="45678901D">
+        <Hospital>Hospital Virgen del Rocío</Hospital>
+        <Doctor>Dr. López</Doctor>
+        <Doctor_ID>34567890E</Doctor_ID>
+        <Doctor_Imagen Imagen="medico3.jpg"/>
+        <Historial_medico>Paciente con diagnóstico previo de glaucoma, episodios de dolor ocular y cambios en la visión periférica.</Historial_medico>
+        <Fecha_de_diagnostico>05/09/2023</Fecha_de_diagnostico>
+        <Parametros_Glaucoma>
+			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+            <Estado>Leve</Estado>
+            <Regla_ISNT>No</Regla_ISNT>
+            <Relación_Copa-Disco>0,7</Relación_Copa-Disco>
+            <Imagen Imagen="image_0004.jpg"/>
+        </Parametros_Glaucoma>
+    </paciente>
+    <!-- Paciente 5 -->
+    <paciente ID="56789012E">
+        <Hospital>Complejo Hospitalario de Navarra</Hospital>
+        <Doctor>Dra. Garcia</Doctor>
+        <Doctor_ID>45678901F</Doctor_ID>
+        <Doctor_Imagen Imagen="medico1.jpg"/>
+        <Historial_medico>Paciente con aumento de presión intraocular y cambios en el nervio óptico. Antecedentes de miopía alta.</Historial_medico>
+        <Fecha_de_diagnostico>10/10/2023</Fecha_de_diagnostico>
+        <Parametros_Glaucoma>
+			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+            <Estado>Moderado</Estado>
+            <Regla_ISNT>No</Regla_ISNT>
+            <Relación_Copa-Disco>0,6</Relación_Copa-Disco>
+            <Imagen Imagen="image_0005.jpg"/>
+        </Parametros_Glaucoma>
+    </paciente>
+    <!-- Paciente 6 -->
+    <paciente ID="67890123F">
+        <Hospital>Hospital Regional Universitario de Málaga</Hospital>
+        <Doctor>Dr. López</Doctor>
+        <Doctor_ID>56789012G</Doctor_ID>
+        <Doctor_Imagen Imagen="medico3.jpg"/>
+        <Historial_medico>Paciente con glaucoma avanzado, pérdida significativa de visión en el ojo derecho. Tratamiento con cirugía láser para reducir la presión ocular.</Historial_medico>
+        <Fecha_de_diagnostico>25/11/2023</Fecha_de_diagnostico>
+        <Parametros_Glaucoma>
+			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+            <Estado>Severo</Estado>
+            <Regla_ISNT>No</Regla_ISNT>
+            <Relación_Copa-Disco>0,8</Relación_Copa-Disco>
+            <Imagen Imagen="image_0006.jpg"/>
+        </Parametros_Glaucoma>
+    </paciente>
+    <!-- Paciente 7 -->
+    <paciente ID="78901234G">
+        <Hospital>Hospital Universitario Ramón y Cajal</Hospital>
+        <Doctor>Dr. Sánchez</Doctor>
+        <Doctor_ID>67890123H</Doctor_ID>
+        <Doctor_Imagen Imagen="medico4.jpeg"/>
+        <Historial_medico>Paciente con antecedentes de hipertensión ocular y glaucoma primario de ángulo abierto. Tratamiento con medicamentos para reducir la presión intraocular.</Historial_medico>
+        <Fecha_de_diagnostico>12/01/2024</Fecha_de_diagnostico>
+        <Parametros_Glaucoma>
+			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+            <Estado>Moderado</Estado>
+            <Regla_ISNT>Si</Regla_ISNT>
+            <Relación_Copa-Disco>0,5</Relación_Copa-Disco>
+            <Imagen Imagen="image_0007.jpg"/>
+        </Parametros_Glaucoma>
+    </paciente>
+</Pacientes>
+
+
+
+
+
+

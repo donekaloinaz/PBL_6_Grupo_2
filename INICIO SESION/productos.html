@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>PRODUCTOS</title>
+		<title>GADIN</title>
 		 <!-- font awesome cdn link  -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<link rel="stylesheet" href="style3.css" >
@@ -11,29 +11,44 @@
 	</head>
 	<body>
 	<header>
-		<a href="#" class="logo">PRODUCTOS</a>
+		<a href="web.html" class="logo">GADIN</a>
 		<nav class="navbar">
 			<ul>
-				<li><a href="#instrucciones">Instrucciones</a></li>
-				<li><a href="#etiqueta">Etiqueta</a></li>
-				<li><a href="#declaracion">Declaración</a></li>
-				<li><a href="#descarga">Descargar aplicación</a></li>
-				<li><a href="#basedatos">Base de datos</a></li>
+				<li><a href="#descarga">Descargar</a></li>
+				<li><a href="#"onclick="etiqueta()">Etiqueta</a></li>
+				<li><a href="#" onclick="instrucciones()">Instrucciones</a></li>
+				<li><a href="#"onclick="declaracion()">Declaración</a></li>
+				<li><a href="#"onclick="basedatos()">Base de datos</a></li>
+				<li><a href="#"onclick="perfil()">Perfil</a></li>
+				<script>
+					function declaracion(){
+						window.location.href="declaracion.html"
+					}
+				</script>
+				<script>
+					function etiqueta(){
+						window.location.href="etiqueta.html"
+					}
+				</script>
+				<script>
+					function instrucciones(){
+						window.location.href="instrucciones.html"
+					}
+				</script>
+				<script>
+					function basedatos(){
+						window.location.href="Glaucoma_analysis.xml"
+					}
+				</script>
+				<script>
+					function perfil() {
+						window.location.href = 'perfil.html';
+					}
+				</script>
 			</ul>
 		</nav>
 		<div class="fas fa-bars"></div>
 	</header>
-	<section class="instrucciones"id="instrucciones">
-		<h1 class="heading">Instrucciones de Uso</h1>
-			<img src="documentos/Instrucciones.png">
-			<a href="documentos/Instrucciones.pdf" target="_blank">Ver PDF</a>
-	</section>
-	<section class="etiqueta" id="etiqueta">
-		<h1 class="heading">Etiqueta</h1>
-	</section>
-	<section class="declaracion" id="declaracion">
-		<h1 class="heading">Declaración UE de conformidad</h1>
-	</section>
 	<section class="descarga" id="descarga">
 		<h1 class="heading">Descargar aplicación</h1>
 		<div class="box-container">
@@ -74,8 +89,19 @@
 				
 			</div>
 	</section>
-	<section class="basedatos" id="basedatos">
-		<h1 class="heading">Base de datos</h1>
-	</section>
+<footer>
+	<p>&copy; 2024 GADIN. Todos los derechos reservados.</p>
+	<p><a href="politica.html">Política de Privacidad</a> | <a href="contacto.html">Contacto</a></p>
+	<div class="icons">
+		<a href="https://www.facebook.com/?locale=eu_ES" class="fab fa-facebook-f"></a>
+		<a href="https://x.com/?lang=ES" class="fab fa-twitter"></a>
+		<a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+	</div>
+</footer>
+<style>
+	position:fixed;
+	bottom:0;
+</style>
+<script src="web.js"></script>
 	</body>
 </html>

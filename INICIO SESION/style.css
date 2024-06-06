@@ -127,6 +127,21 @@ header .fa-bars {
 	color:#00000;
 	padding:1rem 0;
 }
+.about button{
+	height: 2.5rem;
+	width: 10rem;
+	border-radius: 1rem;
+	background:#ff046f;
+	color:#fff;
+	font-size: 1rem;
+	cursor: pointer;
+	transition:.2s;
+	box-shadow:0 .3rem 1rem rgba(0,0,0,.3);
+	margin-top: 2rem;
+	border-color:#ff046f;
+	align-items:center;
+
+}
 .products {
     display: flex;
     flex-direction: column;
@@ -255,7 +270,16 @@ header .fa-bars {
     height: 150px;
 }
 
-#contact form button {
+#contact form button  {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff046f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#contact form button a  {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #ff046f;
@@ -268,4 +292,23 @@ header .fa-bars {
 #contact form button:hover {
     background-color: #ff0240;
 }
+footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
 
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }

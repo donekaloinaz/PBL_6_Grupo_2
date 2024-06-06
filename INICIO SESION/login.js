@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Verificar si el correo electrónico está registrado y si la contraseña coincide
         if (localStorage.getItem(email) === password) {
+            // Almacenar el email y la contraseña del usuario autenticado en localStorage
+            localStorage.setItem("loggedInUserEmail", email);
+            localStorage.setItem("loggedInUserPassword", password);
+
             alert("Inicio de sesión exitoso. ¡Bienvenido!");
             // Redirigir al usuario a la página web creada después de un inicio de sesión exitoso
             window.location.href = "productos.html";
