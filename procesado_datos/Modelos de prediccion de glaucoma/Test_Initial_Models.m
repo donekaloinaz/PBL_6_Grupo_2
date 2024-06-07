@@ -12,14 +12,14 @@ file = uigetfile('*.mat');
 load(file)
 %% Data partition
 Y = newt{:,end};
-X = newt{:,1:end-1};
+X = newt{:,36:end-1};
 cv = cvpartition(Y, 'HoldOut', 0.2, 'Stratify', true);
 X_train = X(cv.training, :);
 X_test  = X(cv.test, :);
 Y_train = Y(cv.training);
 Y_test  = Y(cv.test);
 %% 
-[Y_pred, scores] = predict(knn_mdl_opt, X_test);
+[Y_pred, scores] = predict(nb_mdl, X_test);
 figure('Name','ENSknn Confusion Chart')
 cm = confusionchart(Y_test, Y_pred, 'RowSummary','row-normalized');
 cmvals = cm.NormalizedValues;
