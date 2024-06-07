@@ -7,6 +7,9 @@ X_train = X(cv.training, :);
 X_test  = X(cv.test, :);
 Y_train = Y(cv.training);
 Y_test  = Y(cv.test);
+cvt = cvpartition(features{:,:},'HoldOut',0.2);
+f_train = features{cvt.training};
+f_test = features{cvt.test};
 %% 
 corrmap = corrcoef(X);
 ticks = {'Segmentación','Wavelet','Gabor','Glaucoma'};
@@ -27,12 +30,14 @@ for i = 1:width(features)-1
     corrs(i) = corr(X(:,i),Y);
 end
 [valmaxcorr,idxmaxcorr] = max(abs(corrs));
-for i = 1:width(features)-1
-    mdl = fitmnr(X_train(:,i),Y_train);
-    [Y_pred,scores] = predict(mdl,X_test(:,i));
-    cm = confusionmat(Y_test,Y_pred);
-    acc(i) = (cm(1,1)+cm(2,2))/(cm(1,1)+cm(2,2)+cm(1,2)+cm(2,1));
-    [~,~,~,auc(i)] = perfcurve(Y_test,scores(:,1),0);
+for i = 1:width(features)
+    for j = 1:width(features)
+        mdl = fitmnr(X_train(:,i),Y_train);
+        [Y_pred,scores] = predict(mdl,X_test(:,i));
+        cm = confusionmat(Y_test,Y_pred);
+        acc(i) = (cm(1,1)+cm(2,2))/(cm(1,1)+cm(2,2)+cm(1,2)+cm(2,1));
+        [~,~,~,auc(i)] = perfcurve(Y_test,scores(:,1),0);
+    end
 end
 [valacc,idxacc] = max(acc);
 [valauc,idxauc] = max(auc);
