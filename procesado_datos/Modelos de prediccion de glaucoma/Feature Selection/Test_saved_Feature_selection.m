@@ -1,4 +1,4 @@
-clear;
+clear; close all;
 load image_features.mat
 rng("default")
 %% Z-socre variables
@@ -29,7 +29,7 @@ sen = cmvals(1,1)/(cmvals(1,1)+cmvals(2,1));
 spe = cmvals(2,2)/(cmvals(2,2)+cmvals(1,2));
 precis0 = cmvals(1,1)/(cmvals(1,1)+cmvals(1,2));
 precis1 = cmvals(2,2)/(cmvals(2,1)+cmvals(2,2));
-[~, ~, ~, auc] = perfcurve(Y_test, scores(:,1), 0);
+[x, y, ~, auc] = perfcurve(Y_test, scores(:,1), 0);
 %% Print
 variablenames = variablenames(2:end);
 variables = getvariablenames(varidx,variablenames);

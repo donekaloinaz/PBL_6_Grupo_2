@@ -26,25 +26,25 @@ for i = 1:width(features)-1
     effect(i) = table.Effect;
 end
 effect = effect./max(effect);
-[B,I] = sort(effect);
-string = variables(I(end-6:end));
-% 
-% corrglc = corrmap(:,end);
-% [sorted,order] = sort(corrglc);
-% varstotry = order(end-6:end-1);
+figure
+imagesc(effect); colormap("hot")
 %% 
-% for i = 1:width(features)-1
-%     corrs(i) = corr(X(:,i),Y);
-% end
-% [valmaxcorr,idxmaxcorr] = max(abs(corrs));
-% for i = 1:width(features)
-%     for j = 1:width(features)
-%         mdl = fitmnr(X_train(:,i),Y_train);
-%         [Y_pred,scores] = predict(mdl,X_test(:,i));
-%         cm = confusionmat(Y_test,Y_pred);
-%         acc(i) = (cm(1,1)+cm(2,2))/(cm(1,1)+cm(2,2)+cm(1,2)+cm(2,1));
-%         [~,~,~,auc(i)] = perfcurve(Y_test,scores(:,1),0);
-%     end
-% end
-% [valacc,idxacc] = max(acc);
-% [valauc,idxauc] = max(auc);
+corrglc = corrmap(:,end);
+[sorted,order] = sort(corrglc);
+varstotry = order(end-6:end-1);
+%% 
+for i = 1:width(features)-1
+    corrs(i) = corr(X(:,i),Y);
+end
+[valmaxcorr,idxmaxcorr] = max(abs(corrs));
+for i = 1:width(features)
+    for j = 1:width(features)
+        mdl = fitmnr(X_train(:,i),Y_train);
+        [Y_pred,scores] = predict(mdl,X_test(:,i));
+        cm = confusionmat(Y_test,Y_pred);
+        acc(i) = (cm(1,1)+cm(2,2))/(cm(1,1)+cm(2,2)+cm(1,2)+cm(2,1));
+        [~,~,~,auc(i)] = perfcurve(Y_test,scores(:,1),0);
+    end
+end
+[valacc,idxacc] = max(acc);
+[valauc,idxauc] = max(auc);
