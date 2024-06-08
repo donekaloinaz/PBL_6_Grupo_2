@@ -1,17 +1,17 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="2203152710" file="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App\Glaucoma_diagnosis.prj" location="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App" name="Glaucoma_diagnosis" preferred-package-location="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App\Glaucoma_diagnosis\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="2203152710" file="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\Glaucoma_diagnosis.prj" location="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2" name="Glaucoma_diagnosis" preferred-package-location="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App\Glaucoma_diagnosis\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>Glaucoma_diagnosis_app_1_talde2</param.appname>
     <param.icon />
     <param.icons />
     <param.version>1.0</param.version>
-    <param.authnamewatermark>GADIN</param.authnamewatermark>
+    <param.authnamewatermark />
     <param.email />
-    <param.company />
+    <param.company>GADIN</param.company>
     <param.summary />
     <param.description />
     <param.screenshot />
     <param.guid />
-    <param.installpath.string>\Glaucoma_diagnosis_app_1_talde2\</param.installpath.string>
+    <param.installpath.string>\GADIN\Glaucoma_diagnosis_app_1_talde2\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
     <param.logo />
     <param.install.notes />
@@ -46,8 +46,8 @@
       <param.icon />
       <param.icons />
       <param.version />
+      <param.authnamewatermark />
       <param.email />
-      <param.company />
       <param.summary />
       <param.description />
       <param.screenshot />
@@ -86,37 +86,37 @@
     <fileset.depfun>
       <file>${PROJECT_ROOT}\1.png</file>
       <file>${PROJECT_ROOT}\Acercade.mlapp</file>
+      <file>${PROJECT_ROOT}\data\Datos Calidad\imagenes_limpias_predict.mat</file>
+      <file>${PROJECT_ROOT}\data\Datos Calidad\Modelo_final_SVM.mat</file>
       <file>${PROJECT_ROOT}\Infoapp.mlapp</file>
+      <file>${PROJECT_ROOT}\procesado_datos\Funciones Calidad\one_image_features.m</file>
+      <file>${PROJECT_ROOT}\procesado_datos\Modelos de prediccion de glaucoma\Feature Selection\RFA_ENSTrees_model.mat</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Feature Extraction\calcISNT.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Feature Extraction\Gabor_features.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Feature Extraction\get1ImageFeatures.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Feature Extraction\Segmentation_features.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Feature Extraction\Wavelet_features.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\imagenlimpiarandom.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\Bit plane slicing\Bit_plane_slicing_segmentation.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\Bit plane slicing\calculate_diameter.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\Bit plane slicing\crop_image.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\Bit plane slicing\green_channel_bitplaneslicing.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\Bit plane slicing\red_channel_bitplaneslicing.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\Bit plane slicing\RemoveVessels.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\Bit plane slicing\segment_rgb_image.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\Bit plane slicing\selectseg.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\Copa optica\getcuplogical.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\Copa optica\select_last_bits.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\Copa optica\select_last_bits_old.m</file>
+      <file>${PROJECT_ROOT}\procesado_imagenes\Segmentación\fullsegmentation.m</file>
       <file>${PROJECT_ROOT}\Red-Arrow-Png-195.png</file>
       <file>${PROJECT_ROOT}\unnamed.png</file>
       <file>${PROJECT_ROOT}\yy3.gif</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\data\Datos Calidad\imagenes_limpias_predict.mat</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\data\Datos Calidad\Modelo_final_SVM.mat</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_datos\Funciones Calidad\one_image_features.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_datos\Modelos de prediccion de glaucoma\Feature Selection\RFA_ENSTrees_model.mat</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Feature Extraction\calcISNT.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Feature Extraction\Gabor_features.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Feature Extraction\get1ImageFeatures.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Feature Extraction\Segmentation_features.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Feature Extraction\Wavelet_features.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\imagenlimpiarandom.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\Bit plane slicing\Bit_plane_slicing_segmentation.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\Bit plane slicing\calculate_diameter.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\Bit plane slicing\crop_image.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\Bit plane slicing\green_channel_bitplaneslicing.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\Bit plane slicing\red_channel_bitplaneslicing.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\Bit plane slicing\RemoveVessels.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\Bit plane slicing\segment_rgb_image.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\Bit plane slicing\selectseg.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\Copa optica\getcuplogical.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\Copa optica\select_last_bits.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\Copa optica\select_last_bits_old.m</file>
-      <file>C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\procesado_imagenes\Segmentación\fullsegmentation.m</file>
     </fileset.depfun>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\Glaucoma_diagnosis\for_testing" name="readme.txt" optional="true">C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App\Glaucoma_diagnosis\for_testing\readme.txt</file>
-      <file location="${PROJECT_ROOT}\Glaucoma_diagnosis\for_testing" name="Glaucoma_diagnosis_app_1_talde2.exe" optional="false">C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App\Glaucoma_diagnosis\for_testing\Glaucoma_diagnosis_app_1_talde2.exe</file>
-      <file location="${PROJECT_ROOT}\Glaucoma_diagnosis\for_testing" name="splash.png" optional="false">C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App\Glaucoma_diagnosis\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\Glaucoma_diagnosis\for_testing" name="readme.txt" optional="true">C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\Glaucoma_diagnosis\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\Glaucoma_diagnosis\for_testing" name="Glaucoma_diagnosis_app_1_talde2.exe" optional="false">C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\Glaucoma_diagnosis\for_testing\Glaucoma_diagnosis_app_1_talde2.exe</file>
+      <file location="${PROJECT_ROOT}\Glaucoma_diagnosis\for_testing" name="splash.png" optional="false">C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\Glaucoma_diagnosis\for_testing\splash.png</file>
     </build-deliverables>
     <workflow />
     <matlab>
