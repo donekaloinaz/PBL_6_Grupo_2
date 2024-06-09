@@ -1,6 +1,6 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="4152138833" file="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App exported\Glaucoma_diagnosis.prj" location="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App exported" name="Glaucoma_diagnosis" preferred-package-location="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App exported\Glaucoma_diagnosis\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
-    <param.appname>Glaucoma_diagnosis_app2_talde2</param.appname>
+  <configuration build-checksum="3152859523" file="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App exported\Glaucoma_diagnosis.prj" location="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App exported" name="Glaucoma_diagnosis" preferred-package-location="C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App exported\Glaucoma_diagnosis\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>Glaucoma_diagnosis_app6_talde2</param.appname>
     <param.icon />
     <param.icons />
     <param.version>1.0</param.version>
@@ -11,7 +11,7 @@
     <param.description />
     <param.screenshot />
     <param.guid />
-    <param.installpath.string>\GADIN\Glaucoma_diagnosis_app2_talde2\</param.installpath.string>
+    <param.installpath.string>\GADIN\Glaucoma_diagnosis_app6_talde2\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
     <param.logo />
     <param.install.notes />
@@ -24,8 +24,8 @@
     <param.user.defined.mcr.options />
     <param.target.type>subtarget.standalone</param.target.type>
     <param.support.packages />
-    <param.web.mcr>false</param.web.mcr>
-    <param.package.mcr>true</param.package.mcr>
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
     <param.no.mcr>false</param.no.mcr>
     <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
     <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
@@ -64,6 +64,8 @@
       <param.user.defined.mcr.options />
       <param.target.type />
       <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
       <param.no.mcr />
       <param.web.mcr.name />
       <param.package.mcr.name />
@@ -93,7 +95,6 @@
       <file>${PROJECT_ROOT}\getcuplogical.m</file>
       <file>${PROJECT_ROOT}\green_channel_bitplaneslicing.m</file>
       <file>${PROJECT_ROOT}\imagenes_limpias_predict.mat</file>
-      <file>${PROJECT_ROOT}\imagenlimpiarandom.m</file>
       <file>${PROJECT_ROOT}\Infoapp.mlapp</file>
       <file>${PROJECT_ROOT}\Modelo_final_SVM.mat</file>
       <file>${PROJECT_ROOT}\one_image_features.m</file>
@@ -112,7 +113,7 @@
     </fileset.depfun>
     <build-deliverables>
       <file location="${PROJECT_ROOT}\Glaucoma_diagnosis\for_testing" name="splash.png" optional="false">C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App exported\Glaucoma_diagnosis\for_testing\splash.png</file>
-      <file location="${PROJECT_ROOT}\Glaucoma_diagnosis\for_testing" name="Glaucoma_diagnosis_app2_talde2.exe" optional="false">C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App exported\Glaucoma_diagnosis\for_testing\Glaucoma_diagnosis_app2_talde2.exe</file>
+      <file location="${PROJECT_ROOT}\Glaucoma_diagnosis\for_testing" name="Glaucoma_diagnosis_app6_talde2.exe" optional="false">C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App exported\Glaucoma_diagnosis\for_testing\Glaucoma_diagnosis_app6_talde2.exe</file>
       <file location="${PROJECT_ROOT}\Glaucoma_diagnosis\for_testing" name="readme.txt" optional="true">C:\Users\igali\Desktop\PBL 6\Git\PBL_6_Grupo_2\App exported\Glaucoma_diagnosis\for_testing\readme.txt</file>
     </build-deliverables>
     <workflow />
