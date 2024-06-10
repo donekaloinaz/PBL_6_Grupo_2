@@ -10,10 +10,10 @@
         <Historial_medico>Paciente con síntomas iniciales de glaucoma, presión intraocular elevada. Tratamiento con colirios para reducir la presión ocular.</Historial_medico>
         <Fecha_de_diagnostico>01/05/2023</Fecha_de_diagnostico>
         <Parametros_Glaucoma>
-            <Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+            <Tipo_de_Glaucoma>Angulo cerrado</Tipo_de_Glaucoma>
 			<Estado>Leve</Estado>
             <Regla_ISNT>No</Regla_ISNT>
-            <Relación_Copa-Disco>0,2</Relación_Copa-Disco>
+            <Relación_Copa-Disco>0.2</Relación_Copa-Disco>
             <Imagen Imagen="image_0001.jpg"/>
         </Parametros_Glaucoma>
     </paciente>
@@ -26,10 +26,10 @@
         <Historial_medico>Paciente con episodios de visión borrosa y presión ocular elevada. Tratamiento con gotas oftálmicas para reducir la presión intraocular.</Historial_medico>
         <Fecha_de_diagnostico>15/06/2023</Fecha_de_diagnostico>
         <Parametros_Glaucoma>
-			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+			<Tipo_de_Glaucoma>Normotensivo</Tipo_de_Glaucoma>
             <Estado>Moderado</Estado>
             <Regla_ISNT>No</Regla_ISNT>
-            <Relación_Copa-Disco>0,5</Relación_Copa-Disco>
+            <Relación_Copa-Disco>0.5</Relación_Copa-Disco>
             <Imagen Imagen="image_0002.jpg"/>
         </Parametros_Glaucoma>
     </paciente>
@@ -42,10 +42,10 @@
         <Historial_medico>Paciente con antecedentes familiares de glaucoma. Signos de neuropatía óptica detectados en el examen oftalmológico.</Historial_medico>
         <Fecha_de_diagnostico>20/07/2023</Fecha_de_diagnostico>
         <Parametros_Glaucoma>
-			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+			<Tipo_de_Glaucoma>Angulo cerrado</Tipo_de_Glaucoma>
             <Estado>Severo</Estado>
             <Regla_ISNT>Si</Regla_ISNT>
-            <Relación_Copa-Disco>0,4</Relación_Copa-Disco>
+            <Relación_Copa-Disco>0.4</Relación_Copa-Disco>
             <Imagen Imagen="image_0003.jpg"/>
         </Parametros_Glaucoma>
     </paciente>
@@ -61,7 +61,7 @@
 			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
             <Estado>Leve</Estado>
             <Regla_ISNT>No</Regla_ISNT>
-            <Relación_Copa-Disco>0,7</Relación_Copa-Disco>
+            <Relación_Copa-Disco>0.7</Relación_Copa-Disco>
             <Imagen Imagen="image_0004.jpg"/>
         </Parametros_Glaucoma>
     </paciente>
@@ -74,10 +74,10 @@
         <Historial_medico>Paciente con aumento de presión intraocular y cambios en el nervio óptico. Antecedentes de miopía alta.</Historial_medico>
         <Fecha_de_diagnostico>10/10/2023</Fecha_de_diagnostico>
         <Parametros_Glaucoma>
-			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+			<Tipo_de_Glaucoma>Angulo cerrado</Tipo_de_Glaucoma>
             <Estado>Moderado</Estado>
             <Regla_ISNT>No</Regla_ISNT>
-            <Relación_Copa-Disco>0,6</Relación_Copa-Disco>
+            <Relación_Copa-Disco>0.6</Relación_Copa-Disco>
             <Imagen Imagen="image_0005.jpg"/>
         </Parametros_Glaucoma>
     </paciente>
@@ -90,10 +90,10 @@
         <Historial_medico>Paciente con glaucoma avanzado, pérdida significativa de visión en el ojo derecho. Tratamiento con cirugía láser para reducir la presión ocular.</Historial_medico>
         <Fecha_de_diagnostico>25/11/2023</Fecha_de_diagnostico>
         <Parametros_Glaucoma>
-			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
+			<Tipo_de_Glaucoma>Otro</Tipo_de_Glaucoma>
             <Estado>Severo</Estado>
             <Regla_ISNT>No</Regla_ISNT>
-            <Relación_Copa-Disco>0,8</Relación_Copa-Disco>
+            <Relación_Copa-Disco>0.8</Relación_Copa-Disco>
             <Imagen Imagen="image_0006.jpg"/>
         </Parametros_Glaucoma>
     </paciente>
@@ -108,8 +108,8 @@
         <Parametros_Glaucoma>
 			<Tipo_de_Glaucoma>Angulo abierto</Tipo_de_Glaucoma>
             <Estado>Moderado</Estado>
-            <Regla_ISNT>Si</Regla_ISNT>
-            <Relación_Copa-Disco>0,5</Relación_Copa-Disco>
+            <Regla_ISNT>No</Regla_ISNT>
+            <Relación_Copa-Disco>0.5</Relación_Copa-Disco>
             <Imagen Imagen="image_0007.jpg"/>
         </Parametros_Glaucoma>
     </paciente>
