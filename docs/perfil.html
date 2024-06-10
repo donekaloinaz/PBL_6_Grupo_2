@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="style6.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            width: 100%;
+            background: #ff9999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            transition: .2s;
+        }
+
+        header .navbar ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header .navbar ul li {
+            margin: 0 1rem;
+        }
+
+        header .navbar ul li a {
+            font-size: 2rem;
+            color: #fff;
+            transition: .2s;
+        }
+
+        header .navbar ul li .active,
+        header .navbar ul li a:hover {
+            color: #ff046f;
+        }
+
+        header .logo {
+            font-size: 2.5rem;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        header .fa-bars {
+            font-size: 3rem;
+            color: #ff046f;
+            cursor: pointer;
+            display: none;
+            transition: .2s;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 100px auto; /* Adjust this value if necessary to ensure the content is not hidden behind the header */
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">GADIN</a>
+    </header>
+    <div class="container">
+        <h1>Perfil</h1>
+        <p>Email: <span id="userEmail"></span></p>
+        <p>Contraseña: <span id="userPassword"></span></p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const email = localStorage.getItem('loggedInUserEmail');
+            const password = localStorage.getItem('loggedInUserPassword');
+            document.getElementById('userEmail').textContent = email || 'No hay usuario autenticado';
+            document.getElementById('userPassword').textContent = password || 'No hay usuario autenticado';
+        });
+    </script>
+    <footer>
+        <p>&copy; 2024 GADIN. Todos los derechos reservados.</p>
+        <p><a href="politica.html">Política de Privacidad</a> | <a href="contacto.html">Contacto</a></p>
+        <p>(+34)635467896</p>
+		<div class="icons">
+			<a href="https://www.facebook.com/?locale=eu_ES" class="fab fa-facebook-f"></a>
+			<a href="https://x.com/?lang=ES" class="fab fa-twitter"></a>
+			<a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+		</div>
+    </footer>
+</body>
+</html>
