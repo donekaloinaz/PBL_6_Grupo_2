@@ -48,7 +48,7 @@
             </head>
             <body>
                 <header>
-                    <h2><a href="web.html">GADIN</a></h2>
+                    <h2><a href="index.html">GADIN</a></h2>
                 </header>
 
                 <h1>Lista de Pacientes</h1>
